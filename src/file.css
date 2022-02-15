@@ -1,0 +1,11 @@
+@font-face{
+    font-family:'GilroyHeavy';
+    src: local('Gilroy-Heavy'),
+       url('./fonts/Gilroy-Heavy.ttf') format('truetype');
+}
+  
+@font-face{
+    font-family:'GilroyLight';
+    src: local('Gilroy-Light'),
+        url('./fonts/Gilroy-Light.ttf') format('truetype');
+}
