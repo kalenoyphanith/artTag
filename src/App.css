@@ -76,3 +76,29 @@ a {
     background: transparent;
     border-bottom: 1px solid white;
   }
+
+/* alt + shift + a  || ctrl + / */  
+/* PAINT APP CSS */
+.paint-app {
+  background-color: #1C778C;
+}
+
+.toolButton {
+  background-color: #1C778C;
+  border: none;
+  padding: 20px 10px;
+}
+
+.bottom-tools {
+  background-color: #1C778C;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+.top-tools .toolButton, .bottom-tools .toolButton {
+  padding: 2% 5%;
+}

@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import ReactCodeInput from "react-code-input";
 import Home from './Home.js';
+import Paint from './Paint.js';
 import Landing from './Landing.js'
 import './App.css';
 
@@ -17,7 +18,7 @@ function App() {
                 <Landing/>
               </Route>
               <Route path="/home">
-                <Home/>
+                <Paint/>
               </Route>
             </Switch>
           </div>
