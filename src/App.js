@@ -1,8 +1,12 @@
 import logo from './logo.svg';
 import ReactCodeInput from "react-code-input";
 import Home from './Home.js';
+<<<<<<< HEAD
 import Explore from './Explore';
 import Gallery from './Gallery';
+=======
+import Paint from './Paint.js';
+>>>>>>> 5e217738b7a0752c3bc57895094d8e5b5e510f66
 import Landing from './Landing.js'
 import Draw from './Draw';
 import Mapbox from './MapBox';
@@ -23,6 +27,7 @@ function App() {
               <Route exact path="/">
                 <Landing/>
               </Route>
+<<<<<<< HEAD
               <Route path="/explore">
                 <Explore/>
               </Route>
@@ -43,6 +48,10 @@ function App() {
               </Route>
               <Route path="/scan">
                 <Scan/>
+=======
+              <Route path="/home">
+                <Paint/>
+>>>>>>> 5e217738b7a0752c3bc57895094d8e5b5e510f66
               </Route>
             </Switch>
           </div>

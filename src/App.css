@@ -84,6 +84,7 @@ a {
     border-bottom: 1px solid white;
   }
 
+<<<<<<< HEAD
   .links {
     color: black;
   }
@@ -507,16 +508,31 @@ label{
 
 .toolButton {
   background-color: #083849;
+=======
+/* alt + shift + a  || ctrl + / */  
+/* PAINT APP CSS */
+.paint-app {
+  background-color: #1C778C;
+}
+
+.toolButton {
+  background-color: #1C778C;
+>>>>>>> 5e217738b7a0752c3bc57895094d8e5b5e510f66
   border: none;
   padding: 20px 10px;
 }
 
 .bottom-tools {
+<<<<<<< HEAD
   background-color: #083849;
+=======
+  background-color: #1C778C;
+>>>>>>> 5e217738b7a0752c3bc57895094d8e5b5e510f66
   overflow: hidden;
   position: fixed;
   bottom: 0;
   width: 100%;
+<<<<<<< HEAD
   display: flex;
   padding: 5% 0%;
   justify-content: space-around;
@@ -537,4 +553,12 @@ label{
   -o-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
+=======
+}
+
+
+
+.top-tools .toolButton, .bottom-tools .toolButton {
+  padding: 2% 5%;
+>>>>>>> 5e217738b7a0752c3bc57895094d8e5b5e510f66
 }

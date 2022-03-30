@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import './file.css';
 // import Navbar from './Navbar';
 // import Explore from './Explore';
@@ -31,3 +32,17 @@
 // }
 
 // export default Home;
+=======
+import './file.css';
+//import { useNavigate } from "react-router-dom";
+
+function Home() {
+  return (
+      <div className="App">
+          <h1>Home Page! a NEW page!</h1>
+      </div>
+  );
+}
+
+export default Home;
+>>>>>>> 5e217738b7a0752c3bc57895094d8e5b5e510f66
