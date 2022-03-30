@@ -1,28 +1,19 @@
-import ReactCodeInput from "react-code-input";
+
 import './App.css';
 import './file.css';
 import{Link} from 'react-router-dom';
+import logo from './media/logo.png';
+
+//import ReactCodeInput from "react-code-input";
+//<ReactCodeInput type='number' id="digit-input" fields={6} />
 
 function Landing() {
   return (
-      <div className="App">
-        <header className="App-header">
-          <p>Welcome to</p>
+      <div className="landing-page">
+          <img src={`${logo}`} alt="ArtTag logo" className="center"></img>
           <h1 id="art-tag">
-            Art Tag
+            ArtTag
           </h1>
-          <ReactCodeInput type='number' id="digit-input" fields={6} />
-          <p>Enter your 6 number code</p>
-          <Link to="/home">Log-in</Link>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            Learn React
-          </a>
-        </header>
       </div>
   );
 }
