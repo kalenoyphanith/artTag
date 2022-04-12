@@ -1,7 +1,6 @@
 
 import './App.css';
 import './file.css';
-import{Link} from 'react-router-dom';
 import logo from './media/logo.png';
 
 function Landing() {
