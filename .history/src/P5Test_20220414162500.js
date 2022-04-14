@@ -7,7 +7,7 @@ import './App.css';
 import back from './icons/Back.png';
 import brush from './icons/brush.png';
 import color from './icons/color.png';
-//import done from './icons/done.png';
+import done from './icons/done.png';
 import trash from './icons/trash.png';
 import eraser from './icons/eraser.png';
 import undo from './icons/last_step.png';
@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
 
 import pencil from './icons/pencil.png';
 import fountain from './icons/fountain.png';
-//import { Slider } from 'material-ui-slider';
+import { Slider } from 'material-ui-slider';
 //import Slider from 'react-rangeslider'
 //import Slider from '@mui/material/Slider';
 

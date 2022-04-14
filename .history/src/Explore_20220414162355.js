@@ -15,3 +15,8 @@ const Explore = () => {
 }
  
 export default Explore;
+
+{/* <div className="location">
+<p className="location-heading">Location</p>
+<label className="location-name">{slide.label}</label>
+</div> */}

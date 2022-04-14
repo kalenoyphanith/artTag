@@ -3,7 +3,7 @@ import App from './App';
 //import{BrowserRouter as Router} from 'react-router-dom';
 test('renders learn react link', () => {
   render(<App />);
-  const linkElement = screen.getByText('ArtTag');
+  const linkElement = screen.getByText('arttag');
   expect(linkElement).toBeInTheDocument();
 });
 

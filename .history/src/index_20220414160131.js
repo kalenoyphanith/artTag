@@ -1,8 +1,9 @@
-//import './setupTests.js'
+import './setupTests.js'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import * as p5 from "p5";
 
 ReactDOM.render(
   <React.StrictMode>

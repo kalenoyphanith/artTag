@@ -24,7 +24,7 @@ import { Link } from "react-router-dom";
 
 import pencil from './icons/pencil.png';
 import fountain from './icons/fountain.png';
-//import { Slider } from 'material-ui-slider';
+import { Slider } from 'material-ui-slider';
 //import Slider from 'react-rangeslider'
 //import Slider from '@mui/material/Slider';
 
