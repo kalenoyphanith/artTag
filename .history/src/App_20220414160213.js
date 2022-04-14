@@ -1,11 +1,8 @@
 import Explore from './Explore';
 import Gallery from './Gallery';
 import Landing from './Landing.js'
-
 import Carousel from './components/Carousel';
-
-import Test from './P5Test'
-
+import Test from './P5Test';
 import './App.css';
 
 import{BrowserRouter as Router, Route, Switch} from 'react-router-dom';
