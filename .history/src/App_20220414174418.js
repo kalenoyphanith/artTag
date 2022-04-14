@@ -7,13 +7,13 @@ import Carousel from './components/Carousel';
 import Test from './P5Test'
 
 import './App.css';
-import { HashRouter } from 'react-router-dom'
+
 import{BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 //import { useNavigate } from "react-router-dom";
 
 function App() {
   return (
-    <HashRouter>
+    <Router>
       <div className="App">
         <div className="content">
             <Switch>
@@ -35,7 +35,7 @@ function App() {
             </Switch>
           </div>
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 
