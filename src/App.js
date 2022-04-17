@@ -1,6 +1,7 @@
 import Explore from './Explore';
 import Gallery from './Gallery';
 import Landing from './Landing.js'
+import Scan from './Camera'
 
 import Carousel from './components/Carousel';
 
@@ -31,6 +32,9 @@ function App() {
               </Route>
               <Route path="/test">
                 <Test/>
+              </Route>
+              <Route path="/scan">
+                <Scan/>
               </Route>
             </Switch>
           </div>
