@@ -169,10 +169,10 @@ button.close-btn {
   z-index: 1 !important;
 }
 
-img.cancelBtn {
+/* img.cancelBtn {
   padding-top: 32%;
   width: 97%;
-}
+} */
 
 /* Saving and Tagging */
 button.saveToGallery,

@@ -28,26 +28,34 @@ const Carousel = () => {
     const slidesData = [
       {
         id: 1,
-        image: SAU,
-        label: "Student Alumni Union"
-      }, {
-        id: 2,
         image: gordon,
-        label: "Gordon Field House"
-      }, {
+        label: "Gene Polisseni Center",
+      },
+      {
+        id: 2,
+        image: SAU,
+        label: "Student Alumni Union",
+      },
+      {
         id: 3,
         image: george,
-        label:"George Eastman Building"
-      }, {
+        label: "George Eastman Building",
+      },
+      {
         id: 4,
+        image: gannet,
+        label: "Frank E. Gannett Hall",
+      },
+      {
+        id: 5,
         image: booth,
         label: "James E. Booth Hall",
       },
-       {
-        id: 5,
-        image: gannet,
-        label: "Frank E. Gannett Hall",
-       }
+      {
+        id: 6,
+        image: booth,
+        label: "James E. Booth Hall",
+      },
     ];
     return (
       <>

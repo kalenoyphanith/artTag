@@ -3,7 +3,7 @@ import add from '../media/add.png'
 import gallery from '../media/gallery.png'
 import qr from '../media/qr.png'
 import create from '../media/create.png'
-//import tag from '../media/tag.png'
+import tag from '../media/tag.png'
 import { Link } from "react-router-dom";
 import Popup from "../components/Popup"
 import {useState} from 'react';
@@ -17,7 +17,8 @@ function BottomNav() {
 
           <button onClick={() => setButtonPopup(true)} className="add-button"><img src={`${add}`} alt="navigateButton"/></button>
           <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-            <Link to="/test"><button><img src={`${create}`} style= {{ width: '100%'}} alt="createButton"/></button></Link>
+            <Link to="/drawingApp"><button><img src={`${create}`} id="popup-tab" alt="createButton"/></button></Link>
+            <Link to="/drawingApp"><button><img src={`${tag}`} id="popup-tab" alt="createButton"/></button></Link>
           </Popup>
           
           <Link to="/gallery"><button><img src={`${gallery}`} style= {{ width: '50%'}} alt="navigateButton"/></button></Link>

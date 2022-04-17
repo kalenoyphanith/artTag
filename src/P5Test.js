@@ -1,7 +1,7 @@
 import {React, useRef} from "react";
 import Sketch from "react-p5";
 //import p5 from "react-p5";
-import './Paint.css';
+/* import './Paint.css'; */
 
 import './App.css';
 import back from './icons/Back.png';
