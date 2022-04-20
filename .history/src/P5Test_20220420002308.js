@@ -2,7 +2,7 @@ import {React, useRef} from "react";
 import Sketch from "react-p5";
 import useColorRootClose from "react-overlays/useRootClose";
 //import p5 from "react-p5";
-//import './Paint.css';
+import './Paint.css';
 
 //import './App.css';
 import back from './icons/Back.png';
@@ -10,7 +10,7 @@ import brush from './icons/brush.png';
 import color from './icons/color.png';
 //import done from './icons/done.png';
 import trash from './icons/trash.png';
-import eraserImg from './icons/eraser.png';
+import eraser from './icons/eraser.png';
 import undo from './icons/last_step.png';
 import redo from './icons/next_step.png';
 import save from './icons/save.png';
@@ -25,9 +25,14 @@ import { Link } from "react-router-dom";
 
 import pencil from './icons/pencil.png';
 import fountain from './icons/fountain.png';
+//import { Slider } from 'material-ui-slider';
+//import Slider from 'react-rangeslider'
+//import Slider from '@mui/material/Slider';
 
 // overlay
 import useRootClose from 'react-overlays/useRootClose';
+
+// Using an ES6 transpiler like Babel
 
 // To include the default styles
 import 'react-rangeslider/lib/index.css'
@@ -120,6 +125,7 @@ export default (props) => {
               }
             }
           }
+    
     };
 
     const pen = (color, sizeBrush, p5) =>{
@@ -199,19 +205,15 @@ export default (props) => {
         }
     }
 
-    const eraser = (color, brushWidth,p5) =>{
-        p5.stroke(`${color}`)
-        p5.strokeWeight(brushWidth * 4)
-        
-        p5.line(p5.pwinMouseX, p5.pwinMouseY - 50, p5.winMouseX, p5.winMouseY - 50)
-    }
-
     const toggleErase = p5 => {
         if (eraseEnable) {
+            console.log("if", eraseEnable);
             unsafe_p5Instance.noErase();
+    
             eraseEnable = false;
     
         }
+        console.log("else", eraseEnable);
         unsafe_p5Instance.erase();
         eraseEnable = true;
     }
@@ -314,7 +316,7 @@ export default (props) => {
                     </div>
                     )}
           
-                <button className="toolButton"><img src={eraserImg} onClick={()=>{console.log("eraser"); type = "erase"; unsafe_p5Instance.erase();}} width="auto"/></button>
+                <button className="toolButton"><img src={eraser} onClick={toggleErase} width="auto"/></button>
                 <button
                     type="button"
                     className="toolButton"
