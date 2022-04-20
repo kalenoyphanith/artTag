@@ -27,6 +27,6 @@ const CameraPage = () => {
     </Fragment>
   );
 };
-ReactDOM.render(<CameraPage />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
-export default CameraPage;
+export default Camera;

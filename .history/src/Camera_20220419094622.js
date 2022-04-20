@@ -7,7 +7,7 @@ function capture(imgSrc) {
   console.log(imgSrc);
 }
 
-const CameraPage = () => {
+const App = () => {
   const cam = useRef(null);
   return (
     <Fragment>
@@ -27,6 +27,6 @@ const CameraPage = () => {
     </Fragment>
   );
 };
-ReactDOM.render(<CameraPage />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
-export default CameraPage;
+export default App;
