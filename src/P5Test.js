@@ -72,10 +72,10 @@ export default (props) => {
         // (without that p5 will render the canvas outside of your component)
         cnv = p5.createCanvas(500, 500).parent(canvasParentRef);
         
-        colorPicker = p5.createColorPicker('#ed225d');
+        /* colorPicker = p5.createColorPicker('#ed225d'); */
         
-        brushWidth = p5.createSlider(1, 10, 3, 1);
-        brushWidth.position((p5.width / 2) - 75, p5.height + 50)
+        /* brushWidth = p5.createSlider(1, 10, 3, 1);
+        brushWidth.position((p5.width / 2) - 75, p5.height + 50) */
 
         function preventBehavior(e) {
             e.preventDefault();

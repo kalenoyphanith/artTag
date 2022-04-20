@@ -101,6 +101,7 @@ input {
 .gallery-content {
   max-width: 100%;
   margin: 0 auto;
+  overflow:hidden;
   background-image: linear-gradient(#083d4f, #10839e, #083d4f);
   height: 100vh;
   min-height: 100vh;
@@ -109,7 +110,8 @@ input {
 .gallery-header {
   color: white;
   margin: 0px;
-  padding-top: 10%;
+  padding-top: 9.25%;
+  font-size: 36px;
 }
 
 .photos {
