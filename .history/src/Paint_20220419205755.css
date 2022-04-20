@@ -120,7 +120,7 @@ input {
 }
 
 /* Pop-up going back */
-/* .popup {
+.popup {
   position: fixed;
   top: 0px;
   left: 0;
@@ -143,7 +143,7 @@ input {
   border-radius: 12px;
   transform: translate(-7%, 50%);
   transform: rotate(90deg);
-} */
+}
 
 p {
   text-align: center;
@@ -158,6 +158,21 @@ button.returnHome {
   border: none;
   background-color: transparent;
 }
+
+button.close-btn {
+  border: none;
+  background-color: transparent;
+  transform: rotate(90deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1 !important;
+}
+
+/* img.cancelBtn {
+  padding-top: 32%;
+  width: 97%;
+} */
 
 /* Saving and Tagging */
 button.saveToGallery,

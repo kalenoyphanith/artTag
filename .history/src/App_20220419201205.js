@@ -30,7 +30,7 @@ function App() {
               <Route exact path="/carousel">
                 <Carousel/>
               </Route>
-              <Route path="/drawingApp">
+              <Route path="/test">
                 <Test/>
               </Route>
               <Route path="/scan">

@@ -159,6 +159,21 @@ button.returnHome {
   background-color: transparent;
 }
 
+/* button.close-btn {
+  border: none;
+  background-color: transparent;
+  transform: rotate(90deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1 !important;
+} */
+
+/* img.cancelBtn {
+  padding-top: 32%;
+  width: 97%;
+} */
+
 /* Saving and Tagging */
 button.saveToGallery,
 button.saveAndTag {

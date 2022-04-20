@@ -4,7 +4,7 @@ import useColorRootClose from "react-overlays/useRootClose";
 //import p5 from "react-p5";
 import './Paint.css';
 
-//import './App.css';
+import './App.css';
 import back from './icons/Back.png';
 import brush from './icons/brush.png';
 import color from './icons/color.png';

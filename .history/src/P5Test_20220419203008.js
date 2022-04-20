@@ -2,9 +2,9 @@ import {React, useRef} from "react";
 import Sketch from "react-p5";
 import useColorRootClose from "react-overlays/useRootClose";
 //import p5 from "react-p5";
-import './Paint.css';
+/* import './Paint.css'; */
 
-//import './App.css';
+import './App.css';
 import back from './icons/Back.png';
 import brush from './icons/brush.png';
 import color from './icons/color.png';
@@ -255,15 +255,13 @@ export default (props) => {
     /* Color input */
     const [colorValue, setColorValue] = useState(0);
 
-    const colorRef = useRef();
-
-    const [showColor, setColorShow] = useState(false);
-    const handleColorRootClose = () => setColorShow(false);
-
-
     useColorRootClose(colorRef, handleColorRootClose, {
         disabled: !showColor,
     });
+
+    const colorRef = useRef();
+    const [showColor, setColorShow] = useState(false);
+    const handleColorRootClose = () => setColorShow(false);
 
 	return(
         <div className="paint-app">
@@ -304,39 +302,11 @@ export default (props) => {
                             <img className="brushImg" src={pencil} onClick={()=>{console.log("pen"); type = "pen"; pen(); }}></img>
                             <img className="brushImg" src={spray} onClick={()=>{console.log("sprat"); type = "spray"; sprayPaint();}} style= {{ width: '10%', paddingBottom: "6%"}}></img>
                         </span>
-                        <input
-                            type="range"
-                            min="1"
-                            max={MAX}
-                            id="slider"
-                            onChange={(e) => setValue(e.target.value)}
-                            onClick={changeValue()}
-                            value={value}
-                            />
                     </div>
                     )}
           
                 <button className="toolButton"><img src={eraser} onClick={toggleErase} width="auto"/></button>
-                <button
-                    type="button"
-                    className="toolButton"
-                    onClick={() => setColorShow(true)}
-                    >
-                    <img src={color} width="auto" />
-                    </button>
-                    {showColor && (
-                    <div ref={colorRef} className="color-overlay">
-                        <span className="colors">
-                        <input
-                            type="color"
-                            id="colorPicker"
-                            onChange={(e) => setColorValue(e.target.value)}
-                            onClick={changeColor()}
-                            value={colorValue}
-                        />
-                        </span>
-                    </div>
-                    )}
+                <button className="toolButton"><img src={color} width="auto"/></button>
             </div>
         </div>
     );

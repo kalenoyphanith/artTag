@@ -945,3 +945,11 @@ img#navButton {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
+
+/* Camera Scan */
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}

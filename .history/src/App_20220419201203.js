@@ -19,7 +19,7 @@ function App() {
         <div className="content">
             <Switch>
               <Route exact path="/">
-              <Landing/>
+                <Landing/>
               </Route>
               <Route path="/explore">
               <Explore/>
@@ -30,7 +30,7 @@ function App() {
               <Route exact path="/carousel">
                 <Carousel/>
               </Route>
-              <Route path="/drawingApp">
+              <Route path="/test">
                 <Test/>
               </Route>
               <Route path="/scan">
