@@ -305,9 +305,7 @@ export default (props) => {
 
     const redoToPreviousState = ( )=> {
 
-        if (!redoImages || !redoImages.length || redoIndex === 0 || redoImages.length === 1) {
-            return
-        } else {
+        if (!redoImages || !redoImages.length || redoIndex === 0 || redoImages.length === 1) {} else {
     
             stateIndex++;
     

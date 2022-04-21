@@ -229,7 +229,7 @@ export default (props) => {
         p5.stroke(color)
         p5.strokeWeight(brushWidth * 4)
         
-        p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY  - 110)
+        p5.line(p5.pwinMouseX, p5.pwinMouseY - 150, p5.winMouseX, p5.winMouseY - 150)
     }
 
     // const toggleErase = p5 => {
@@ -305,9 +305,7 @@ export default (props) => {
 
     const redoToPreviousState = ( )=> {
 
-        if (!redoImages || !redoImages.length || redoIndex === 0 || redoImages.length === 1) {
-            return
-        } else {
+        if (!redoImages || !redoImages.length || redoIndex === 0 || redoImages.length === 1) {} else {
     
             stateIndex++;
     
