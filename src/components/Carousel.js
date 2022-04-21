@@ -8,6 +8,7 @@ import SAU from '../media/sauBGScreen.png'
 import gordon from '../media/gordonBGScreen.png'
 import george from '../media/eastmanBGScreen.png'
 import booth from '../media/boothBGScreen.png'
+import boothMain from '../media/boothMainBGScreen.png'
 import gannet from '../media/gannettBGScreen.png'
 import navigate from '../media/navigate.png'
 import {Link} from 'react-router-dom';
@@ -48,7 +49,7 @@ const Carousel = () => {
       },
       {
         id: 5,
-        image: booth,
+        image: boothMain,
         label: "James E. Booth Hall",
       },
       {
@@ -71,7 +72,7 @@ const Carousel = () => {
 
                     <label className="location-name" id={`${slide.label}`}>{slide.label}</label>
                   </div>
-                  <Link to="/mapbox"><button className="navigate-button"><img id="navButton" src={`${navigate}`} alt="navigateButton"/></button></Link>
+                  <button className="navigate-button"><Link to="/mapbox"><img id="navButton" src={`${navigate}`} alt="navigateButton"/></Link></button>
 
                 </div>
   

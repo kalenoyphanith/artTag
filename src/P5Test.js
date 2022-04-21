@@ -109,7 +109,6 @@ export default (props) => {
             if (p5.mouseX <= p5.windowWidth && p5.mouseX >= 0 && p5.mouseY <= (p5.windowHeight -200) && p5.mouseY >= 0) {
                 saveState();
                 console.log("state has been saved");
-                
             }
         })
 	};
@@ -164,11 +163,20 @@ export default (props) => {
     };
 
     const pen = (color, sizeBrush, p5) =>{
-        p5.stroke(color).rotate(-90)
+        p5.stroke(color)
         p5.strokeWeight(sizeBrush)
         //p5.translate(0,-110);
-        p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY - 110)
-        //p5.line(p5.pwinMouseY - 110, p5.pwinMouseX, p5.winMouseY - 110, p5.winMouseX)
+        //p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY - 110    
+
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            // you're in PORTRAIT mode
+            p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY - 110)
+         }
+         
+         if (window.matchMedia("(orientation: landscape)").matches) {
+            // you're in LANDSCAPE mode
+            p5.line(-p5.pwinMouseY + 405, p5.pwinMouseX - 115, -p5.winMouseY + 405, p5.winMouseX - 115)
+         }
     }
 
     ///////////////////////////// ******** Spray paint brush *********** ///////////////////////
@@ -206,7 +214,15 @@ export default (props) => {
                 const randY = p5.random(-1, 1) * p5.sqrt(rSquared - randX * randX)
 
                 // draw the random point
-                p5.point(lerpX + randX, lerpY + randY)
+                if (window.matchMedia("(orientation: portrait)").matches) {
+                    // you're in PORTRAIT mode
+                    p5.point(lerpX + randX, lerpY + randY)
+                }
+                 
+                if (window.matchMedia("(orientation: landscape)").matches) {
+                    // you're in LANDSCAPE mode
+                    p5.point(-lerpY + -randY + 405, lerpX + randX)
+                }
             }
         }
     }
@@ -223,8 +239,15 @@ export default (props) => {
         p5.noStroke()
         console.log("Color: ", color);
         //p5.noStroke()
-        p5.circle(p5.mouseX, p5.mouseY, brushWidth * 10)
-        //p5.circle(p5.mouseY, p5.mouseX, brushWidth * 10)
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            // you're in PORTRAIT mode
+            p5.circle(p5.mouseX, p5.mouseY, brushWidth * 10)
+        }
+         
+        if (window.matchMedia("(orientation: landscape)").matches) {
+            // you're in LANDSCAPE mode
+            p5.circle(-p5.mouseY + 405, p5.mouseX, brushWidth * 10)
+        }
     }
 
     ///////////////////////////// ******** Fountain pen ***********  /////////////////////////
@@ -247,15 +270,31 @@ export default (props) => {
             const y = p5.lerp(p5.mouseY, p5.pmouseY, i / lerps)
 
             // draw a slanted line
-            p5.line(x - width, y - width, x + width, y + width)
+            if (window.matchMedia("(orientation: portrait)").matches) {
+                // you're in PORTRAIT mode
+                p5.line(x - width, y - width, x + width, y + width)
+            }
+             
+            if (window.matchMedia("(orientation: landscape)").matches) {
+                // you're in LANDSCAPE mode
+                p5.line(-y - width + 405, x - width, -y + width + 405, x + width)
+            }
         }
     }
 
     const eraser = (color, brushWidth,p5) =>{
         p5.stroke(color)
         p5.strokeWeight(brushWidth * 4)
-        
-        p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY  - 110)
+
+        if (window.matchMedia("(orientation: portrait)").matches) {
+            // you're in PORTRAIT mode
+            p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY  - 110)
+        }
+         
+        if (window.matchMedia("(orientation: landscape)").matches) {
+            // you're in LANDSCAPE mode
+            p5.line(-p5.pwinMouseY + 405, p5.pwinMouseX - 110, -p5.winMouseY + 405, p5.winMouseX  - 110)
+        }
     }
 
     const resetSketch = (p5) => {

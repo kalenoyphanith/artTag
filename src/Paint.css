@@ -230,3 +230,7 @@ input[type="range"]::-webkit-slider-thumb:active {
   overflow: hidden;
 }
 
+/* canvas#defaultCanvas0 {
+  transform: rotate(-90deg);
+} */
+

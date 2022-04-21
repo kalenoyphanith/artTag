@@ -1,105 +1,63 @@
-//import React, { Fragment, useRef } from 'react';
-// import ReactDOM from 'react-dom';
-// import { Camera } from 'react-cam';
-//import './App.css';
+import React, { Component } from 'react'
+import QrReader from 'react-qr-scanner'
+ 
+class Camera extends Component {
 
-import React, { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import { IconButton } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
+  constructor(props){
 
-//https://engineering.99x.io/how-to-access-the-camera-of-a-mobile-device-using-react-progressive-web-app-pwa-9d77168e5f2d
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: "100%",
-    textAlign: 'center',
-  },
-  imgBox: {
-    maxWidth: "80%",
-    maxHeight: "80%",
-    margin: "10px"
-  },
-  img: {
-    height: "inherit",
-    maxWidth: "inherit",
-  },
-  input: {
-    display: "none"
-  }
-}))
-
-// function capture(imgSrc) {
-//   console.log(imgSrc);
-// }
-
-//width="window.innerWidth"
-//height="window.innerHeight"
-const CameraPage = () => {
-  const classes = useStyles();const [source, setSource] = useState("");const handleCapture = (target) => {
-    if (target.files) {
-      if (target.files.length !== 0) {
-        const file = target.files[0];
-        const newUrl = URL.createObjectURL(file);
-        setSource(newUrl);
-      }
+    super(props)
+    this.state = {
+      delay: 100,
+      result: 'No result',
     }
-  };
-  return (
-    <div className={classes.root}>
-      <Grid container>
-        <Grid item xs={12}>
-          <h5>Capture your image</h5>
-          {source &&
-            <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
-              <img src={source} alt={"snap"} className={classes.img}></img>
-            </Box>}
-          <input
-            accept="image/*"
-            className={classes.input}
-            id="icon-button-file"
-            type="file"
-            capture="environment"
-            onChange={(e) => handleCapture(e.target)}
+ 
+    this.handleScan = this.handleScan.bind(this)
+  }
+  handleScan(data){
+      if(data == null) {
+          console.log("nothing to see")
+          return
+      }
+    let value = data
+    console.log(value);
+
+    this.setState({ result: data })
+    console.log("////////////////////////////////////////////////////////////////////////", data.text)
+  }
+
+  handleError(err){
+    console.error(err)
+  }
+
+  render(){
+    const previewStyle = {
+        height: 700,
+        width: 1000,
+        display: 'flex', "justifyContent": 'center'
+    }
+
+    const camStyle = {
+        display: 'flex',
+        justifyContent: "center",
+        marginTop: '-50px'
+    }
+
+    const textStyle = {
+        fontSize: '30px', "textAlign": 'center',
+        marginTop: '-50px'
+    }
+ 
+    return(
+        <div>
+        <QrReader
+          delay={this.state.delay}
+          style={previewStyle}
+          onError={this.handleError}
+          onScan={this.handleScan}
           />
-          <label htmlFor="icon-button-file">
-            <IconButton
-              color="primary"
-              aria-label="upload picture"
-              component="span"
-            >
-              <PhotoCameraRoundedIcon fontSize="large" color="primary" />
-            </IconButton>
-          </label>
-        </Grid>
-      </Grid>
-    </div>
-  );
+
+      </div>
+    )
+  }
 }
-
-export default CameraPage;
-
-// const CameraPage = () => {
-//   const cam = useRef(null);
-//   return (
-//     <Fragment>
-//       <Camera
-//         showFocus={true}
-//         front={true}
-//         capture={capture}
-//         ref={cam}
-//         width="100%"
-//         height="100%"
-//         focusWidth="80%"
-//         focusHeight="60%"
-//         btnColor="white"
-//         objectFit="cover"
-//       />
-//       {/* <button onClick={img => cam.current.capture(img)}>Take image</button> */}
-//     </Fragment>
-//   );
-// };
-// ReactDOM.render(<CameraPage />, document.getElementById('root'));
-
-// export default CameraPage;
+export default Camera;

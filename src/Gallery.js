@@ -56,9 +56,9 @@ class Gallery extends React.Component {
           <h1 className="gallery-header"><Link to="/explore"><img src={backButton} alt="backBtn" id="backButton"/></Link>ArtTag</h1>
         </div>
         <div>
-        <button onClick={refreshPage}>Click to reload!</button>
+        {/* <button onClick={refreshPage}>Click to reload!</button> */}
       </div>
-        <div className="gallery" style={{ overflow: "scroll", height: "65vh" }}>
+        <div className="gallery" style={{ overflow: "scroll", height: "60vh" }}>
           <div className="photos">
             <img
               src={sketch1}
