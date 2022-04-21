@@ -87,16 +87,6 @@ export default (props) => {
         document.addEventListener("touchmove", preventBehavior, {
             passive: false
         });
-
-        cnv.mousePressed((event) => {
-            console.log("mouseispressed")
-            console.log("hello", event);
-            if (p5.mouseX <= p5.windowWidth && p5.mouseX >= 0 && p5.mouseY <= (p5.windowHeight -200) && p5.mouseY >= 0) {
-                saveState();
-                console.log("state has been saved");
-                
-            }
-        })
 	};
 
 	const draw = (p5) => {
@@ -241,8 +231,6 @@ export default (props) => {
     const resetSketch = (p5) => {
         // debugger;
         unsafe_p5Instance.clear();
-        stateIndex = 0;
-        state = [];
     }
     const saveSketch = p5 => {
         unsafe_p5Instance.saveCanvas(cnv, "sketch", "png");
@@ -251,47 +239,12 @@ export default (props) => {
     function changeValue() {
         brushWidth = value;
         bool = true;
-    }
-    
-    function changeColor() {
-      colorPicker = value;
-      boolColor = true;
-    }
-
-    const saveState = (p5) =>{
-        stateIndex++;
-    
-        previousState = unsafe_p5Instance.get()
-        unsafe_p5Instance.loadPixels();
-        state.push(previousState)
-        return stateIndex;
-    }
-
-    const mp = p5 => {
-        if (p5.mouseX <= p5.windowWidth && p5.mouseX >= 0 && p5.mouseY <= (p5.windowHeight -200) && p5.mouseY >= 0) {
-            saveState();
-            console.log("state has been saved");
-        }
-        //console.log("hello",p5);
       }
-
-    const undoToPreviousState = (p5) => {
-
-        if (!state || !state.length || stateIndex === 0) {
-            console.log(state);
-            stateIndex = 0;
-            state = [];
-            return;
-        }
     
-        stateIndex--;
-    
-        console.log("stateIndex in UndoToPreviousState: ", stateIndex);
-        unsafe_p5Instance.clear()
-    
-        unsafe_p5Instance.image(state[stateIndex], 0, 0);
-        state.pop();
-    }
+      function changeColor() {
+        colorPicker = value;
+        boolColor = true;
+      }
 
 
     const [saveButtonPopup, setSaveButtonPopup] = useState(false);
@@ -332,7 +285,7 @@ export default (props) => {
                 </Popup>
                 
                 <button className="toolButton"><img src={redo} width="auto" id="redo-button"/></button>
-                <button className="toolButton"><img src={undo} width="auto" id="undo-button" onClick={undoToPreviousState}/></button>
+                <button className="toolButton"><img src={undo} width="auto" id="undo-button"/></button>
                 
                 <button onClick={() => setBackButtonPopup(true)} className="toolButton"><img src={back} width="auto" id="back-button"/></button>
                 <div id="draw-backbtn">
@@ -344,7 +297,7 @@ export default (props) => {
 
             </div>
 
-             <Sketch setup={setup} draw={draw} className="no-scroll" mousePressed={mp}/>  
+             <Sketch setup={setup} draw={draw} className="no-scroll"/>  
 
             <div className='bottom-tools'>
             
@@ -381,7 +334,7 @@ export default (props) => {
                     >
                     <img src={color} width="auto" />
                     </button> */}
-                    {/* {showColor && ( */}
+                    {showColor && (
                     <button ref={colorRef} id="color-overlay" className="toolButton">
                         <span className="colors">
                         <input
@@ -393,7 +346,7 @@ export default (props) => {
                         />
                         </span>
                     </button>
-                    {/* )} */}
+                    )}
             </div>
         </div>
     );

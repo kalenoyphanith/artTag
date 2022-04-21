@@ -107,8 +107,8 @@ class Gallery extends React.Component {
     );
   }
 }
-//refreshes pages every time
-//window.onload = () => {refreshPage()}
+
+window.onload = () => {refreshPage()}
 
 window.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");

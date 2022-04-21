@@ -31,9 +31,6 @@ import { Link } from "react-router-dom";
 import { render } from "@testing-library/react";
 import React from "react";
 
-function refreshPage() {
-  window.location.reload(false);
-}
 class Gallery extends React.Component {
   state = {
     show: false,
@@ -49,7 +46,9 @@ class Gallery extends React.Component {
   render() {
     //refresh page automatically for iphones/safari
     //change to automatic refresh when page loads
-
+    function refreshPage() {
+      window.location.reload(false);
+    }
     return (
       <div className="gallery-content">
         <div className="header">
@@ -107,7 +106,7 @@ class Gallery extends React.Component {
     );
   }
 }
-//refreshes pages every time
+
 //window.onload = () => {refreshPage()}
 
 window.addEventListener("DOMContentLoaded", (event) => {

@@ -241,8 +241,6 @@ export default (props) => {
     const resetSketch = (p5) => {
         // debugger;
         unsafe_p5Instance.clear();
-        stateIndex = 0;
-        state = [];
     }
     const saveSketch = p5 => {
         unsafe_p5Instance.saveCanvas(cnv, "sketch", "png");
@@ -259,7 +257,7 @@ export default (props) => {
     }
 
     const saveState = (p5) =>{
-        stateIndex++;
+        //stateIndex++;
     
         previousState = unsafe_p5Instance.get()
         unsafe_p5Instance.loadPixels();

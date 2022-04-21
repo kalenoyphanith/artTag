@@ -1,34 +1,7 @@
-//import React, { Fragment, useRef } from 'react';
-// import ReactDOM from 'react-dom';
-// import { Camera } from 'react-cam';
-//import './App.css';
-
-import React, { useState } from 'react';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import { IconButton } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
-
-//https://engineering.99x.io/how-to-access-the-camera-of-a-mobile-device-using-react-progressive-web-app-pwa-9d77168e5f2d
-const useStyles = makeStyles((theme) => ({
-  root: {
-    height: "100%",
-    textAlign: 'center',
-  },
-  imgBox: {
-    maxWidth: "80%",
-    maxHeight: "80%",
-    margin: "10px"
-  },
-  img: {
-    height: "inherit",
-    maxWidth: "inherit",
-  },
-  input: {
-    display: "none"
-  }
-}))
+import React, { Fragment, useRef } from 'react';
+import ReactDOM from 'react-dom';
+import { Camera } from 'react-cam';
+import './App.css';
 
 // function capture(imgSrc) {
 //   console.log(imgSrc);
