@@ -1,6 +1,5 @@
 import {React, useRef} from "react";
 import Sketch from "react-p5";
-import useColorRootClose from "react-overlays/useRootClose";
 //import p5 from "react-p5";
 import './Paint.css';
 
@@ -28,6 +27,8 @@ import fountain from './icons/fountain.png';
 
 // overlay
 import useRootClose from 'react-overlays/useRootClose';
+import useColorRootClose from "react-overlays/useRootClose";
+import useEraseRootClose from "react-overlays/useRootClose";
 
 // To include the default styles
 import 'react-rangeslider/lib/index.css'
@@ -49,12 +50,15 @@ let redoIndex = 0;
 //slider
 let brushWidth = document.getElementById("slider");
 let slider;
+let sliderErase;
 
 //colorPicker
 let colorPick;
 let colorPicker = document.getElementById("colorPicker");
+let eraserWidth = document.getElementById("sliderErase");
 let bool = false;
 let boolColor = false;
+let boolErase = false;
 
 //window.p5.clear();
 let unsafe_p5Instance;
@@ -69,7 +73,7 @@ export default (props) => {
         colorPick.type = "color";
         colorPick.value = "#000000";
 
-        //create a fake slider
+        //create a fake slider - brushes
         slider = document.createElement("input");
         slider.id = "sliderTwo";
         slider.type = "range";
@@ -77,6 +81,15 @@ export default (props) => {
         slider.max = 15;
         slider.value = 1;
         slider.step = 1;
+
+        //create a fake slider - eraser
+        sliderErase = document.createElement("input");
+        sliderErase.id = "sliderEraser";
+        sliderErase.type = "range";
+        sliderErase.min = 1;
+        sliderErase.max = 15;
+        sliderErase.value = 1;
+        sliderErase.step = 1;
 
 		// use parent to render the canvas in this ref
         // (without that p5 will render the canvas outside of your component)
@@ -103,38 +116,47 @@ export default (props) => {
 
 	const draw = (p5) => {
         if (p5.mouseIsPressed) {
-            colorPicker = colorPick.value;
             p5.stroke(colorPicker);
-      
+
             if (boolColor == false) {
               colorPicker = colorPick.value;
             } else if (boolColor == true) {
               colorPicker = colorValue;
             }
-            console.log(colorPicker);
       
             //check if the slider is created
             if (bool == false) {
               pen(colorPicker, slider.value, p5);
               brushWidth = slider.value;
+              eraserWidth = sliderErase.value;
             } else if (bool == true) {
               //if there are no modifications, make sure the brush is 1
               if (brushWidth == 0) {
                 brushWidth = 1;
+              }
+              if (eraserWidth == 0) {
+                eraserWidth = 1;
               }
               colorPicker = colorValue;
               console.log(brushWidth);
       
               //change the type of tool
               if (type === "marker") {
-                marker(colorPicker, brushWidth, p5);
+                  if(colorPicker == "0"){
+                      marker("#00000050", brushWidth, p5);
+                  } else if (colorPicker !== "0") {
+                      colorPicker = colorValue;
+                      console.log("heresss: " + colorPicker)
+                    marker(`${colorPicker}50`, brushWidth, p5);
+                  }
+                //marker(`${colorPicker}50`, brushWidth, p5);
               } else if (type === "spray") {
                 sprayPaint(colorPicker, brushWidth, p5);
               } else if (type === "fountain") {
                 fountainPen(colorPicker, brushWidth, p5);
-              } else if (type === "erase") {
-                eraser('rgba(255, 255, 255 0)', brushWidth, p5);
-              }else {
+              }else if (type === "erase") {
+                eraser('rgba(255, 255, 255 0)', eraserWidth, p5);
+              } else {
                 pen(colorPicker, brushWidth, p5);
               }
             }
@@ -142,18 +164,18 @@ export default (props) => {
     };
 
     const pen = (color, sizeBrush, p5) =>{
-        p5.stroke(color)
+        p5.stroke(color).rotate(-90)
         p5.strokeWeight(sizeBrush)
         //p5.translate(0,-110);
-
         p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY - 110)
+        //p5.line(p5.pwinMouseY - 110, p5.pwinMouseX, p5.winMouseY - 110, p5.winMouseX)
     }
 
     ///////////////////////////// ******** Spray paint brush *********** ///////////////////////
     const sprayPaint = (color, sizeBrush, p5) => {
         // set the color and brush style
         p5.stroke(color)
-        p5.strokeWeight(sizeBrush)
+        p5.strokeWeight(sizeBrush * 0.8)
 
         // find the speed of the mouse movement
         const speed = p5.abs(p5.mouseX - p5.pmouseX) + p5.abs(p5.mouseY - p5.pmouseY)
@@ -191,14 +213,18 @@ export default (props) => {
 
     ///////////////////////////// ******** Marker brush ***********  ////////////////////////
     const marker = (color, brushWidth, p5) => {
-        if (color === undefined || color === '#000000') {
+        /* if (color === undefined || color === '#000000') {
             p5.fill(`${color}50`)
-        }
-        p5.fill(`${color}50`)
+        } */
+        /* let colorString = color + "50"
+        console.log("cs" + colorString)
+        console.log */
+        p5.fill(color)
         p5.noStroke()
         console.log("Color: ", color);
         //p5.noStroke()
         p5.circle(p5.mouseX, p5.mouseY, brushWidth * 10)
+        //p5.circle(p5.mouseY, p5.mouseX, brushWidth * 10)
     }
 
     ///////////////////////////// ******** Fountain pen ***********  /////////////////////////
@@ -232,18 +258,7 @@ export default (props) => {
         p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY  - 110)
     }
 
-    // const toggleErase = p5 => {
-    //     if (eraseEnable) {
-    //         unsafe_p5Instance.noErase();
-    //         eraseEnable = false;
-    
-    //     }
-    //     unsafe_p5Instance.erase();
-    //     eraseEnable = true;
-    // }
-
     const resetSketch = (p5) => {
-        // debugger;
         unsafe_p5Instance.clear();
         stateIndex = 0;
         state = [];
@@ -258,8 +273,13 @@ export default (props) => {
     }
     
     function changeColor() {
-      colorPicker = value;
+      colorPicker = colorValue;
       boolColor = true;
+    }
+
+    function changeErase() {
+        eraserWidth = eraseValue;
+        boolErase = true;
     }
 
     const saveState = (p5) =>{
@@ -279,7 +299,7 @@ export default (props) => {
         //console.log("hello",p5);
       }
 
-    const undoToPreviousState = (p5) => {
+      const undoToPreviousState = (p5) => {
 
         if (!state || !state.length || stateIndex === 0) {
             console.log(state);
@@ -304,21 +324,13 @@ export default (props) => {
     }
 
     const redoToPreviousState = ( )=> {
-
-        if (!redoImages || !redoImages.length || redoIndex === 0 || redoImages.length === 1) {
-            return
-        } else {
-    
+        if (!redoImages || !redoImages.length || redoIndex === 0 || redoImages.length === 1) {return} else {
             stateIndex++;
-    
             redoIndex--;
-    
             unsafe_p5Instance.clear()
-    
             unsafe_p5Instance.image(redoImages[redoIndex - 1], 0, 0);
             state.push(redoImages.pop())
         }
-    
     }
 
 
@@ -336,18 +348,26 @@ export default (props) => {
 
     const MAX = 15;
     const [value, setValue] = useState(0);
+    const [eraseValue, setEraseValue] = useState(0);
 
     /* Color input */
     const [colorValue, setColorValue] = useState(0);
 
     const colorRef = useRef();
+    const eraseRef = useRef();
 
     const [showColor, setColorShow] = useState(false);
     const handleColorRootClose = () => setColorShow(false);
+    const [showErase, setEraseShow] = useState(false);
+    const handleEraseRootClose = () => setEraseShow(false);
 
 
     useColorRootClose(colorRef, handleColorRootClose, {
         disabled: !showColor,
+    });
+
+    useEraseRootClose(eraseRef, handleEraseRootClose, {
+        disabled: !showErase,
     });
 
 	return(
@@ -366,7 +386,7 @@ export default (props) => {
                 <div id="draw-backbtn">
                 <Popup trigger={backButtonPopup} setTrigger={setBackButtonPopup}>
                     <p>Do you want to lose this masterpiece?</p>
-                    <Link to="/explore"><button><img src={`${returnToHome}`} style= {{ width: '100%'}} alt="createButton"/></button></Link>
+                    <Link to="/explore"><button><img src={`${returnToHome}`} style= {{ width: '100%'}} alt="createButton" className="returnHome"/></button></Link>
                 </Popup>
                 </div>
 
@@ -401,7 +421,24 @@ export default (props) => {
                     </div>
                     )}
           
-                <button className="toolButton"><img src={eraserImg} onClick={()=>{unsafe_p5Instance.erase();console.log("eraser"); type = "erase";}} width="auto"/></button>
+                <button className="toolButton" onClick={() => setEraseShow(true)}><img src={eraserImg} onClick={()=>{unsafe_p5Instance.erase();console.log("eraser"); type = "erase";}} width="auto"/></button>
+                {showErase && (
+                    <div
+                        ref={eraseRef}
+                        className="eraser-overlay"
+                    >
+                        <input
+                            type="range"
+                            min="1"
+                            max={MAX}
+                            id="sliderErase"
+                            onChange={(e) => setEraseValue(e.target.value)}
+                            onClick={changeErase()}
+                            value={eraseValue}
+                            />
+                    </div>
+                    )}
+
                 {/* <button
                     type="button"
                     className="toolButton"
