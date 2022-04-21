@@ -175,7 +175,7 @@ export default (props) => {
          
          if (window.matchMedia("(orientation: landscape)").matches) {
             // you're in LANDSCAPE mode
-            p5.line(-p5.pwinMouseY + 405, p5.pwinMouseX - 115, -p5.winMouseY + 405, p5.winMouseX - 115)
+            p5.line(-p5.pwinMouseY + 305, p5.pwinMouseX - 115, -p5.winMouseY + 305, p5.winMouseX - 115)
          }
     }
 

@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../App.css";
 import SAU from '../media/sauBGScreen.png'
+import gpc from '../media/PolisseniBGScreen.png'
 import gordon from '../media/gordonBGScreen.png'
 import george from '../media/eastmanBGScreen.png'
 import booth from '../media/boothBGScreen.png'
@@ -29,7 +30,7 @@ const Carousel = () => {
     const slidesData = [
       {
         id: 1,
-        image: gordon,
+        image: gpc,
         label: "Gene Polisseni Center",
       },
       {
