@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2I4ODY5IiwiYSI6ImNsMjg4eTZwdDA3MWMza3IxdmZldTgyejkifQ.G80DUdbJAj5zjtcrcP56yA';
 
-class Mapbox extends React.PureComponent {
+class MapBox extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -124,7 +124,7 @@ class Mapbox extends React.PureComponent {
         return (
             <div className="explore-page">
                 <div className="header">
-                    <h1 className="mapbox-header"><Link to="/explore"><img src={backButton} alt="backBtn" id="backButton" /></Link>ArtTag</h1>
+                    <h1 className="gallery-header"><Link to="/explore"><img src={backButton} alt="backBtn" id="backButton" /></Link>ArtTag</h1>
                 </div>
                 <div ref={this.mapContainer} className="map-container" />
                 <BottomNav></BottomNav>
@@ -133,4 +133,4 @@ class Mapbox extends React.PureComponent {
     }
 }
 
-export default Mapbox;
+export default MapBox;

@@ -410,7 +410,17 @@ export default (props) => {
     });
 
 	return(
+        
         <div className="paint-app">
+            <div id="warning-message" class="modal-warn">
+            <div class="modal-content-error">
+                <p id="warnPara1">Whoops!</p>
+                <p id="warnPara2">
+                Please change your orientation to<br />
+                landscape/horizontal mode
+                </p>
+            </div>
+            </div>
             <div className='top-tools'>
                 <button className="toolButton" onClick={() => setSaveButtonPopup(true)}><img src={save} width="auto" id="save-button" alt="saveBtn"/></button>
                 <Popup trigger={saveButtonPopup} setTrigger={setSaveButtonPopup}>

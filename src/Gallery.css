@@ -82,6 +82,11 @@
   cursor: pointer;
 }
 
+img:active, img:hover{
+  transform: scale(1.1);
+  transition: "transform 0.25s ease";
+}
+
 /* 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 700px) {
   .modal-content {

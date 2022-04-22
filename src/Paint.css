@@ -83,6 +83,12 @@
   }
 }
 
+@media only screen and (orientation: landscape) {
+  #warning-message {
+    display: block;
+  }
+}
+
 *,
 *::before,
 *::after {

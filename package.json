@@ -15,6 +15,7 @@
     "expo-camera": "~12.0.3",
     "mapbox-gl": "^2.8.1",
     "material-ui-slider": "^3.0.8",
+    "modern-react-qr-reader": "^1.0.12",
     "p5": "^1.4.1",
     "react": "^16.2.0",
     "react-cam": "^1.1.11",
@@ -54,9 +55,9 @@
       ">0.2%",
       "not dead",
       "not op_mini all",
-      "not ie 11", 
-      "not chrome < 51", 
-      "not safari < 10", 
+      "not ie 11",
+      "not chrome < 51",
+      "not safari < 10",
       "not android < 51"
     ],
     "development": [
