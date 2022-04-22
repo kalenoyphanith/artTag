@@ -13,6 +13,7 @@ import boothMain from '../media/boothMainBGScreen.png'
 import gannet from '../media/gannettBGScreen.png'
 import navigate from '../media/navigate.png'
 import {Link} from 'react-router-dom';
+import BottomNav from './BottomNav';
 
 const Carousel = () => {
     const sliderRef = useRef();
@@ -77,6 +78,7 @@ const Carousel = () => {
               )}
             </Slider>
             <p className="location-heading">Location</p>
+            <BottomNav></BottomNav>
         </div>
       </>
     );

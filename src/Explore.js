@@ -11,7 +11,7 @@ const Explore = () => {
           <img src={tapBrowse} class="tapBrowse"></img> */}
           <div className="explore-page">
             <Carousel></Carousel>
-            <BottomNav></BottomNav>
+            {/* <BottomNav></BottomNav> */}
           </div>
       {/* </div> */}
         

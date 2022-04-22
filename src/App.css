@@ -301,24 +301,24 @@ ul.slick-dots {
   bottom: 0%;
   list-style: none;
   text-align: center;
-  z-index:999;
+  /* z-index:999; */
 }
 
 .slick-dots li {
   margin: 0 -2px !important;
-  z-index:999;
+  /* z-index:999; */
 }
 
 .slick-dots li button:before {
   color: white;
-  z-index:999;
+  /* z-index:999; */
 }
 
 .slick-dots li.slick-active button:before {
   opacity: 0.75;
   color: white !important;
   padding: 0%;
-  z-index:999;
+  /* z-index:999; */
 }
 
 .slick-dots li button:before {
@@ -336,7 +336,7 @@ ul.slick-dots {
   color: white !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  z-index:999;
+  /* z-index:999; */
 }
 
 .slick-prev {
@@ -629,7 +629,7 @@ label {
     width: 75%;
     height: 8.5%;
     left: 12.5%;
-    bottom: 3%;
+    bottom: 7%; /* 3% */
     background: rgba(196, 196, 196, 0.2);
     border-radius: 42px;
   }
@@ -661,7 +661,7 @@ label {
 }
 
 /* All other screens */
-@media screen and (min-width: 376px) and (min-height: 375vh) {
+@media screen and (min-width: 376px) and (min-height: 668px) {
   .location-name {
     position: absolute;
     top: 71%;
@@ -703,12 +703,12 @@ label {
 
   ul.slick-dots {
     position: absolute;
-    top: 110%;
+    top: 50%;
     color: white;
     bottom: 0%;
     list-style: none;
     text-align: center;
-    z-index: 999;
+    /* z-index: 999; */
   }
 
   img.carousel-img {
