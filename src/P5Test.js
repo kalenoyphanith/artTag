@@ -175,7 +175,7 @@ export default (props) => {
          
          if (window.matchMedia("(orientation: landscape)").matches) {
             // you're in LANDSCAPE mode
-            p5.line(-p5.pwinMouseY + 305, p5.pwinMouseX - 115, -p5.winMouseY + 305, p5.winMouseX - 115)
+            p5.line(-p5.pwinMouseY + 350, p5.pwinMouseX - 115, -p5.winMouseY + 350, p5.winMouseX - 115)
          }
     }
 
@@ -477,15 +477,6 @@ export default (props) => {
                             />
                     </div>
                     )}
-
-                {/* <button
-                    type="button"
-                    className="toolButton"
-                    onClick={() => setColorShow(true)}
-                    >
-                    <img src={color} width="auto" />
-                    </button> */}
-                    {/* {showColor && ( */}
                     <button ref={colorRef} id="color-overlay" className="toolButton">
                         <span className="colors">
                         <input
@@ -497,7 +488,6 @@ export default (props) => {
                         />
                         </span>
                     </button>
-                    {/* )} */}
             </div>
         </div>
     );
