@@ -124,7 +124,7 @@ class Mapbox extends React.PureComponent {
         return (
             <div className="explore-page">
                 <div className="header">
-                    <h1 className="gallery-header"><Link to="/explore"><img src={backButton} alt="backBtn" id="backButton" /></Link>ArtTag</h1>
+                    <h1 className="mapbox-header"><Link to="/explore"><img src={backButton} alt="backBtn" id="backButton" /></Link>ArtTag</h1>
                 </div>
                 <div ref={this.mapContainer} className="map-container" />
                 <BottomNav></BottomNav>

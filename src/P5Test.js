@@ -412,20 +412,20 @@ export default (props) => {
 	return(
         <div className="paint-app">
             <div className='top-tools'>
-                <button className="toolButton" onClick={() => setSaveButtonPopup(true)}><img src={save} width="auto" id="save-button"/></button>
+                <button className="toolButton" onClick={() => setSaveButtonPopup(true)}><img src={save} width="auto" id="save-button" alt="saveBtn"/></button>
                 <Popup trigger={saveButtonPopup} setTrigger={setSaveButtonPopup}>
-                    <button ><img src={`${saveToGallery}`} style= {{ width: '100%'}} alt="createButton" onClick={saveSketch}/></button>
-                    <Link to="/placement"><button><img src={`${saveAndTag}`} style= {{ width: '100%'}} alt="createButton"/></button></Link>
+                    <button ><img src={`${saveToGallery}`} className="saveToGallery" style= {{ width: '100%'}} alt="saveButton" onClick={saveSketch}/></button>
+                    <Link to="/scan"><button><img src={`${saveAndTag}`} id="saveTagBtn" style= {{ width: '100%'}} alt="saveTagButton" /></button></Link>
                 </Popup>
                 
-                <button className="toolButton"><img src={redo} width="auto" id="redo-button" onClick={redoToPreviousState}/></button>
-                <button className="toolButton"><img src={undo} width="auto" id="undo-button" onClick={undoToPreviousState}/></button>
+                <button className="toolButton"><img src={redo} width="auto" id="redo-button" onClick={redoToPreviousState} alt="redoBtn"/></button>
+                <button className="toolButton"><img src={undo} width="auto" id="undo-button" onClick={undoToPreviousState} alt="undoBtn"/></button>
                 
-                <button onClick={() => setBackButtonPopup(true)} className="toolButton"><img src={back} width="auto" id="back-button"/></button>
+                <button onClick={() => setBackButtonPopup(true)} className="toolButton"><img src={back} width="auto" id="back-button" alt="backBtn"/></button>
                 <div id="draw-backbtn">
                 <Popup trigger={backButtonPopup} setTrigger={setBackButtonPopup}>
                     <p>Do you want to lose this masterpiece?</p>
-                    <Link to="/explore"><button><img src={`${returnToHome}`} style= {{ width: '100%'}} alt="createButton" className="returnHome"/></button></Link>
+                    <Link to="/explore"><button><img src={`${returnToHome}`} style= {{ width: '100%'}} alt="returnButton" className="returnHome"/></button></Link>
                 </Popup>
                 </div>
 
@@ -435,18 +435,18 @@ export default (props) => {
 
             <div className='bottom-tools'>
             
-                <button className="toolButton" onClick={resetSketch}><img src={trash} width="auto" id="trash-button"/></button>
-                    <button type="button" className="toolButton" onClick={() => setShow(true)}><img src={brush} width="auto"/></button>
+                <button className="toolButton" onClick={resetSketch}><img src={trash} width="auto" id="trash-button" alt="trashbtn"/></button>
+                    <button type="button" className="toolButton" onClick={() => setShow(true)}><img src={brush} width="auto" alt="brushes-img"/></button>
                     {show && (
                     <div
                         ref={ref}
                         className="brushes-overlay"
                     >
                         <span className="brushes">
-                            <img className="brushImg" src={fountain} onClick={()=>{unsafe_p5Instance.noErase();console.log("fountain"); type = "fountain"; fountainPen();}}></img>
-                            <img className="brushImg" src={markerBrush} onClick={()=>{unsafe_p5Instance.noErase();console.log("marker"); type = "marker"; marker();}}></img>
-                            <img className="brushImg" src={pencil} onClick={()=>{unsafe_p5Instance.noErase();console.log("pen"); type = "pen"; pen();}}></img>
-                            <img className="brushImg" src={spray} onClick={()=>{unsafe_p5Instance.noErase();console.log("sprat"); type = "spray"; sprayPaint();}} style= {{ width: '10%', paddingBottom: "6%"}}></img>
+                            <img className="brushImg" src={fountain} alt="brush-fountain" onClick={()=>{unsafe_p5Instance.noErase();console.log("fountain"); type = "fountain"; fountainPen();}}></img>
+                            <img className="brushImg" src={markerBrush} alt="brush-marker" onClick={()=>{unsafe_p5Instance.noErase();console.log("marker"); type = "marker"; marker();}}></img>
+                            <img className="brushImg" src={pencil} alt="brush-pen" onClick={()=>{unsafe_p5Instance.noErase();console.log("pen"); type = "pen"; pen();}}></img>
+                            <img className="brushImg" src={spray} alt="brush-spray" onClick={()=>{unsafe_p5Instance.noErase();console.log("spray"); type = "spray"; sprayPaint();}} style= {{ width: '10%', paddingBottom: "6%"}}></img>
                         </span>
                         <input
                             type="range"
@@ -460,7 +460,7 @@ export default (props) => {
                     </div>
                     )}
           
-                <button className="toolButton" onClick={() => setEraseShow(true)}><img src={eraserImg} onClick={()=>{unsafe_p5Instance.erase();console.log("eraser"); type = "erase";}} width="auto"/></button>
+                <button className="toolButton" onClick={() => setEraseShow(true)}><img src={eraserImg} alt="erasertool" onClick={()=>{unsafe_p5Instance.erase();console.log("eraser"); type = "erase";}} width="auto"/></button>
                 {showErase && (
                     <div
                         ref={eraseRef}

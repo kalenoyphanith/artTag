@@ -89,12 +89,12 @@ input {
   /* position: absolute;
       width: 100%;
       color: #fff; */
-  /* background-image: linear-gradient(#083d4f, #10839e, #083d4f); */
+  background-image: linear-gradient(#083d4f, #10839e, #083d4f);
   /* height: 100vh; */
   /* min-height: 100vh; */
   overflow: hidden;
   margin: 0;
-  height: 100%;
+  height: 92vh;
 }
 
 .slider-div {
@@ -106,16 +106,24 @@ input {
   margin: 0 auto;
   overflow:hidden;
   background-image: linear-gradient(#083d4f, #10839e, #083d4f);
-  height: 100vh;
-  min-height: 100vh;
+  height: 92vh;
+  /* min-height: 100vh; */
 }
 
-.gallery-header {
+.gallery-header, .mapbox-header {
   color: white;
   margin: 0px;
-  padding-top: 9.25%;
+  padding: 9.25% 0 6% 0;
   font-size: 36px;
 }
+
+.mapbox-header {
+  padding: 9.25% 0;
+}
+
+/* div.gallery {
+  padding-top: 50%;
+} */
 
 .photos {
   /* display: flex;
@@ -214,7 +222,7 @@ App.css .App {
 
 .carousel-component {
   background-color: #2e5f70;
-  height: 100vh;
+  height: 92vh;
 }
 
 /* h1#gallery-header {
@@ -276,8 +284,9 @@ img.carousel-img {
 
 .container {
   position: relative;
-  background-color: #2e5f70;
-  height: auto;
+  /* background-color: #2e5f70; */
+  background-image: linear-gradient(#083d4f, #10839e, #083d4f);
+  /* height: auto; */
   padding-left: 0 !important;
 }
 
@@ -326,12 +335,12 @@ ul.slick-dots {
 }
 
 .slick-prev {
-  top: 65% !important;
+  top: 122% !important;
   width: 70px !important;
 }
 
 .slick-next {
-  top: 65% !important;
+  top: 122% !important;
   width: 70px !important;
 }
 
@@ -419,7 +428,7 @@ label {
     position: absolute;
     height: 31.5%;
     left: 25%;
-    top: 52%;
+    top: 102%;
   }
 
   .add-button img {
@@ -678,14 +687,14 @@ label {
     background-color: transparent;
     border: none;
     position: absolute;
-    height: 31.5%;
+    /* height: 31.5%; */
     left: 25%;
     top: 51.5%;
   }
 
   ul.slick-dots {
     position: absolute;
-    top: 59%;
+    top: 110%;
     color: white;
     bottom: 0%;
     list-style: none;
@@ -699,7 +708,7 @@ label {
 
   .carousel-img {
     width: 80%;
-    padding: 20% 7% 7% 9%;
+    padding: 10% 7% 7% 9%;
   }
 
   .add-button img {
@@ -718,7 +727,7 @@ label {
     height: 6%;
     left: 12.5%;
     /* bottom: 7%; */
-    bottom: 39%;
+    bottom: 8%;
     background: rgba(196, 196, 196, 0.2);
     border-radius: 42px;
   }
@@ -732,7 +741,7 @@ label {
     position: absolute;
     width: 84%;
     left: 9%;
-    bottom: 24%;
+    bottom: 30%;
     padding: 5.5%;
     background-color: white;
     border-radius: 12px;
@@ -745,7 +754,7 @@ label {
     width: 95%;
     height: 6.5%;
     left: 2.25%;
-    bottom: 4.5%;
+    bottom: 10%;
   }
 }
 
@@ -760,7 +769,7 @@ label {
 
 .location-heading {
   position: absolute;
-  top: 62.5%;
+  top: 57%;
   left: 50%;
   font-size: 18px;
   line-height: 102%;
@@ -995,7 +1004,7 @@ img#navButton {
 /* MapBox */
 .map-container {
   height: 60vh;
-  margin-top: 10vh;
+  /* padding-top: 1%; */
 }
 
 .marker {
@@ -1038,5 +1047,5 @@ img#navButton {
 
 div#camera-page {
   background-image: linear-gradient(#083d4f, #10839e, #083d4f);
-  height: 80vh;
+  height: 92vh;
 }

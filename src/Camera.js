@@ -65,7 +65,7 @@ class Camera extends Component {
             style={previewStyle}
             onError={this.handleError}
             onScan={this.handleScan}
-            facingMode='environment'
+            facingmode='environment'
             />
         
         {/* <div style={{display: 'flex', justifyContent: 'center'}}>            
