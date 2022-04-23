@@ -82,8 +82,8 @@
   cursor: pointer;
 }
 
-img:active, img:hover{
-  transform: scale(1.1);
+.allImg:active, .allImg:hover{
+  transform: scale(1.3);
   transition: "transform 0.25s ease";
 }
 

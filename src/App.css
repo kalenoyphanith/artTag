@@ -301,6 +301,7 @@ ul.slick-dots {
   bottom: 0%;
   list-style: none;
   text-align: center;
+  height:5px;
   /* z-index:999; */
 }
 
@@ -341,7 +342,7 @@ ul.slick-dots {
 
 .slick-prev {
   top: 71% !important;
-  width: 70px !important;
+  width: 50px !important;
 }
 
 .slick-next {
@@ -425,6 +426,11 @@ label {
   .slick-next {
     right: 2% !important;
     z-index: 1 !important;
+  }
+
+  button.navigate-button {
+    height: 20px;
+    top:73.5%;
   }
 
   .navigate-button {
@@ -664,7 +670,8 @@ label {
 @media screen and (min-width: 376px) and (min-height: 668px) {
   .location-name {
     position: absolute;
-    top: 71%;
+    /* top: 71%; */
+    top: 65%;
     width: 100%;
     left: 70%;
     transform: translate(-50%, -50%);
@@ -703,7 +710,8 @@ label {
 
   ul.slick-dots {
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
+    top: 65%;
     color: white;
     bottom: 0%;
     list-style: none;
@@ -779,7 +787,8 @@ label {
 
 .location-heading {
   position: absolute;
-  top: 58%;
+  /* top: 58%; */
+  top: 53%;
   left: 50%;
   font-size: 18px;
   line-height: 102%;

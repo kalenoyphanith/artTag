@@ -71,8 +71,9 @@ const Carousel = () => {
                   <img className="carousel-img" src={`${slide.image}`} alt="carousel-images"/>
                   <div className="text-block">
                     <label className="location-name" id={`${slide.label}`}>{slide.label}</label>
+                    <button className="navigate-button"><Link to="/mapbox"><img id="navButton" src={`${navigate}`} alt="navigateButton"/></Link></button>
                   </div>
-                  <button className="navigate-button"><Link to="/mapbox"><img id="navButton" src={`${navigate}`} alt="navigateButton"/></Link></button>
+                  
                 </div>
   
               )}

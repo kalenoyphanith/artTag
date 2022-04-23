@@ -45,7 +45,7 @@ class Scan extends Component {
           onScan={this.handleScan}
           />
         <div id="link-to-ar" style={{marginTop: '25vh', display: 'flex', justifyContent: 'center', color: 'black'}}></div>
-        <BottomNav></BottomNav>
+        {/* <BottomNav></BottomNav> */}
       </div>
     )
   }

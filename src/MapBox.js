@@ -127,7 +127,7 @@ class MapBox extends React.PureComponent {
                     <h1 className="gallery-header"><Link to="/explore"><img src={backButton} alt="backBtn" id="backButton" /></Link>ArtTag</h1>
                 </div>
                 <div ref={this.mapContainer} className="map-container" />
-                {/* <BottomNav></BottomNav> */}
+                <BottomNav></BottomNav>
             </div>
         );
     }
