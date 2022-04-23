@@ -55,8 +55,8 @@ const Carousel = () => {
       slidesToShow: 1,
       slidesToScroll: 1,
       className: "slides",
-      nextArrow: <NextButton />,
-      prevArrow: <PrevArrow />
+     /*  nextArrow: <NextButton />,
+      prevArrow: <PrevArrow /> */
     };
   
     const slidesData = [
@@ -102,14 +102,14 @@ const Carousel = () => {
                   <img className="carousel-img" src={`${slide.image}`} alt="carousel-images"/>
                   <div className="text-block">
                     <label className="location-name" id={`${slide.label}`}>{slide.label}</label>
-                    <button className="navigate-button" ><Link to="/mapbox"><img id="navButton" src={`${navigate}`} alt="navigateButton"/></Link></button>
+                    
                   </div>
                   
                 </div>
   
               )}
             </Slider>
-            
+            <button className="navigate-button" ><Link to="/mapbox"><img id="navButton" src={`${navigate}`} alt="navigateButton"/></Link></button>
             {/* <p className="location-heading">Location</p> */}
             <BottomNav></BottomNav>
         </div>
