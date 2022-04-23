@@ -350,7 +350,7 @@ ul.slick-dots {
   width: 36px !important;
 }
 
-.slick-prev:before {
+/* .slick-prev:before {
   font-family: unset !important;
   color: unset !important;
   opacity: 1 !important;
@@ -366,6 +366,14 @@ ul.slick-dots {
   background: url(./icons/next.png);
   padding-bottom: 37px;
   padding-right: 14.8px;
+} */
+
+.slick-prev, .slick-next {
+  font-size: 15px !important;
+}
+
+ .slick-prev:before, .slick-next:before  {
+  content: '' !important;
 }
 
 .location-heading {
@@ -430,7 +438,7 @@ label {
 
   button.navigate-button {
     height: 20px;
-    top:73.5%;
+    top:62.5%;
   }
 
   .navigate-button {
@@ -687,6 +695,18 @@ label {
 
   [id="Booth Hall Lobby"] {
     left: 75%;
+  }
+
+  [id="Student Alumni Union"] {
+    top:69%;
+  }
+
+  [id="Frank E. Gannett Hall"], [id="Booth Hall Lobby"] {
+    top:63%;
+  }
+
+  [id="James E. Booth Hall"] {
+    top:62%;
   }
 
   .slick-prev {
@@ -1074,6 +1094,7 @@ div#camera-page {
 
 a#a-redirect {
   color: #2e5f70;
+  text-decoration: none;
 }
 
 .qr-image-wrapper section div {

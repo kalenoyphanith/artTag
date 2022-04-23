@@ -83,7 +83,7 @@
 }
 
 .allImg:active, .allImg:hover{
-  transform: scale(1.3);
+  transform: scale(1.2);
   transition: "transform 0.25s ease";
 }
 

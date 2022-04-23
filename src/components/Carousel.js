@@ -15,6 +15,36 @@ import navigate from '../media/navigate.png'
 import {Link} from 'react-router-dom';
 import BottomNav from './BottomNav';
 
+import prevButton from '../icons/previous.png'
+import nextButton from '../icons/next.png';
+
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props
+  return (
+      <div 
+          className={className}
+          style={{...style, width: '50%'}}
+          onClick={onClick}
+      >
+          <img src={prevButton}
+          />
+      </div>
+  );
+}
+
+function NextButton(props) {
+  const {className, style, onClick} = props
+  return (
+      <div
+          className={className}
+          style={{...style}}
+          onClick={onClick}
+      >
+          <img src={nextButton} alt="arrow_left"/>
+      </div>
+  );
+}
+
 const Carousel = () => {
     const sliderRef = useRef();
 
@@ -23,9 +53,10 @@ const Carousel = () => {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      arrows: true,
       slidesToScroll: 1,
-      className: "slides"
+      className: "slides",
+      nextArrow: <NextButton />,
+      prevArrow: <PrevArrow />
     };
   
     const slidesData = [
@@ -61,7 +92,7 @@ const Carousel = () => {
       },
     ];
     return (
-      <>
+      <>{/* id={`${slide.label}-navbar`} */}
         <div className="carousel-component">
             <h1 id="gallery-header">ArtTag</h1>
             <Slider {...settings } ref={sliderRef} className="slider-div">
@@ -71,14 +102,15 @@ const Carousel = () => {
                   <img className="carousel-img" src={`${slide.image}`} alt="carousel-images"/>
                   <div className="text-block">
                     <label className="location-name" id={`${slide.label}`}>{slide.label}</label>
-                    <button className="navigate-button"><Link to="/mapbox"><img id="navButton" src={`${navigate}`} alt="navigateButton"/></Link></button>
+                    <button className="navigate-button" ><Link to="/mapbox"><img id="navButton" src={`${navigate}`} alt="navigateButton"/></Link></button>
                   </div>
                   
                 </div>
   
               )}
             </Slider>
-            <p className="location-heading">Location</p>
+            
+            {/* <p className="location-heading">Location</p> */}
             <BottomNav></BottomNav>
         </div>
       </>
