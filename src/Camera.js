@@ -8,7 +8,7 @@ class Scan extends Component {
   constructor(props){
     super(props)
     this.state = {
-      delay: 500,
+      delay: 100,
       result: 'No result',
     }
 
@@ -28,9 +28,12 @@ class Scan extends Component {
   }
   render(){
     const previewStyle = {
-      marginTop: 40,
-      height: 240,
-      width: window.innerWidth
+      marginTop: 10,
+      height: 200,
+      width: 320,
+      display: "block",
+      marginLeft: "auto",
+      marginRight: "auto",
     }
 
     return(
@@ -38,6 +41,7 @@ class Scan extends Component {
         <div className="header">
           <h1 className="gallery-header"><Link to="/explore"><img src={backButton} alt="backBtn" id="backButton"/></Link>ArtTag</h1>
         </div>
+        <h1 id="headerQR">Hold in front of QR code to Scan!</h1>
         <QrReader className="qr-image-wrapper"
           delay={this.state.delay}
           style={previewStyle}

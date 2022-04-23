@@ -94,7 +94,6 @@ export default (props) => {
 		// use parent to render the canvas in this ref
         // (without that p5 will render the canvas outside of your component)
         cnv = p5.createCanvas(window.innerWidth, window.innerHeight - 200).parent(canvasParentRef);
-
         function preventBehavior(e) {
             e.preventDefault();
         };
@@ -169,13 +168,14 @@ export default (props) => {
         //p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY - 110    
 
         if (window.matchMedia("(orientation: portrait)").matches) {
+            
             // you're in PORTRAIT mode
             p5.line(p5.pwinMouseX, p5.pwinMouseY - 110, p5.winMouseX, p5.winMouseY - 110)
          }
          
          if (window.matchMedia("(orientation: landscape)").matches) {
             // you're in LANDSCAPE mode
-            p5.line(-p5.pwinMouseY + 350, p5.pwinMouseX - 115, -p5.winMouseY + 350, p5.winMouseX - 115)
+            //p5.line(-p5.pwinMouseY + 350, p5.pwinMouseX - 115, -p5.winMouseY + 350, p5.winMouseX - 115)
          }
     }
 
@@ -221,7 +221,7 @@ export default (props) => {
                  
                 if (window.matchMedia("(orientation: landscape)").matches) {
                     // you're in LANDSCAPE mode
-                    p5.point(-lerpY + -randY + 405, lerpX + randX)
+                    //p5.point(-lerpY + -randY + 405, lerpX + randX)
                 }
             }
         }
@@ -246,7 +246,7 @@ export default (props) => {
          
         if (window.matchMedia("(orientation: landscape)").matches) {
             // you're in LANDSCAPE mode
-            p5.circle(-p5.mouseY + 405, p5.mouseX, brushWidth * 10)
+            //p5.circle(-p5.mouseY + 405, p5.mouseX, brushWidth * 10)
         }
     }
 
@@ -277,7 +277,7 @@ export default (props) => {
              
             if (window.matchMedia("(orientation: landscape)").matches) {
                 // you're in LANDSCAPE mode
-                p5.line(-y - width + 405, x - width, -y + width + 405, x + width)
+                //p5.line(-y - width + 405, x - width, -y + width + 405, x + width)
             }
         }
     }
@@ -293,6 +293,7 @@ export default (props) => {
          
         if (window.matchMedia("(orientation: landscape)").matches) {
             // you're in LANDSCAPE mode
+            
             p5.line(-p5.pwinMouseY + 405, p5.pwinMouseX - 110, -p5.winMouseY + 405, p5.winMouseX  - 110)
         }
     }
@@ -410,94 +411,101 @@ export default (props) => {
     });
 
 	return(
-        
-        <div className="paint-app">
-            <div id="warning-message" class="modal-warn">
-            <div class="modal-content-error">
-                <p id="warnPara1">Whoops!</p>
-                <p id="warnPara2">
-                Please change your orientation to<br />
-                landscape/horizontal mode
-                </p>
-            </div>
-            </div>
-            <div className='top-tools'>
-                <button className="toolButton" onClick={() => setSaveButtonPopup(true)}><img src={save} width="auto" id="save-button" alt="saveBtn"/></button>
-                <Popup trigger={saveButtonPopup} setTrigger={setSaveButtonPopup}>
-                    <button ><img src={`${saveToGallery}`} className="saveToGallery" style= {{ width: '100%'}} alt="saveButton" onClick={saveSketch}/></button>
-                    <Link to="/scan"><button><img src={`${saveAndTag}`} id="saveTagBtn" style= {{ width: '100%'}} alt="saveTagButton" /></button></Link>
-                </Popup>
-                
-                <button className="toolButton"><img src={redo} width="auto" id="redo-button" onClick={redoToPreviousState} alt="redoBtn"/></button>
-                <button className="toolButton"><img src={undo} width="auto" id="undo-button" onClick={undoToPreviousState} alt="undoBtn"/></button>
-                
-                <button onClick={() => setBackButtonPopup(true)} className="toolButton"><img src={back} width="auto" id="back-button" alt="backBtn"/></button>
-                <div id="draw-backbtn">
-                <Popup trigger={backButtonPopup} setTrigger={setBackButtonPopup}>
-                    <p>Do you want to lose this masterpiece?</p>
-                    <Link to="/explore"><button><img src={`${returnToHome}`} style= {{ width: '100%'}} alt="returnButton" className="returnHome"/></button></Link>
-                </Popup>
+        <div id="paint-canvas">
+            <div id="warning-message" className="modal-warn">
+                <div className="modal-content-error">
+                    <p id="warnPara1">Whoops!</p>
+                    <p id="warnPara2">
+                        Please change your orientation to<br />
+                        portrait/vertical mode
+                        </p>
+                    </div>
                 </div>
+                <div id="wrapper">
+                
+                <div className="paint-app">
+                    
+                    <div className='top-tools'>
+                        <button onClick={() => setBackButtonPopup(true)} className="toolButton"><img src={back} width="auto" id="back-button" alt="backBtn"/></button>
+                        <button className="toolButton"><img src={undo} width="auto" id="undo-button" onClick={undoToPreviousState} alt="undoBtn"/></button>
+                        <button className="toolButton" onClick={() => setSaveButtonPopup(true)}><img src={save} width="auto" id="save-button" alt="saveBtn"/></button>
+                        <Popup trigger={saveButtonPopup} setTrigger={setSaveButtonPopup}>
+                            <button ><img src={`${saveToGallery}`} className="saveToGallery" style= {{ width: '100%'}} alt="saveButton" onClick={saveSketch}/></button>
+                            <Link to="/scan"><button onClick={saveSketch}><img src={`${saveAndTag}`} id="saveTagBtn" style= {{ width: '100%'}} alt="saveTagButton" /></button></Link>
+                        </Popup>
+                        
+                        {/* <button className="toolButton"><img src={redo} width="auto" id="redo-button" onClick={redoToPreviousState} alt="redoBtn"/></button> */}
+                        
+                        
+                        
+                        <div id="draw-backbtn">
+                        <Popup trigger={backButtonPopup} setTrigger={setBackButtonPopup}>
+                            <p>Do you want to lose this masterpiece?</p>
+                            <Link to="/explore"><button><img src={`${returnToHome}`} style= {{ width: '100%'}} alt="returnButton" className="returnHome"/></button></Link>
+                        </Popup>
+                        </div>
 
-            </div>
-
-             <Sketch setup={setup} draw={draw} className="no-scroll" mousePressed={mp}/>  
-
-            <div className='bottom-tools'>
-            
-                <button className="toolButton" onClick={resetSketch}><img src={trash} width="auto" id="trash-button" alt="trashbtn"/></button>
-                    <button type="button" className="toolButton" onClick={() => setShow(true)}><img src={brush} width="auto" alt="brushes-img"/></button>
-                    {show && (
-                    <div
-                        ref={ref}
-                        className="brushes-overlay"
-                    >
-                        <span className="brushes">
-                            <img className="brushImg" src={fountain} alt="brush-fountain" onClick={()=>{unsafe_p5Instance.noErase();console.log("fountain"); type = "fountain"; fountainPen();}}></img>
-                            <img className="brushImg" src={markerBrush} alt="brush-marker" onClick={()=>{unsafe_p5Instance.noErase();console.log("marker"); type = "marker"; marker();}}></img>
-                            <img className="brushImg" src={pencil} alt="brush-pen" onClick={()=>{unsafe_p5Instance.noErase();console.log("pen"); type = "pen"; pen();}}></img>
-                            <img className="brushImg" src={spray} alt="brush-spray" onClick={()=>{unsafe_p5Instance.noErase();console.log("spray"); type = "spray"; sprayPaint();}} style= {{ width: '10%', paddingBottom: "6%"}}></img>
-                        </span>
-                        <input
-                            type="range"
-                            min="1"
-                            max={MAX}
-                            id="slider"
-                            onChange={(e) => setValue(e.target.value)}
-                            onClick={changeValue()}
-                            value={value}
-                            />
                     </div>
-                    )}
-          
-                <button className="toolButton" onClick={() => setEraseShow(true)}><img src={eraserImg} alt="erasertool" onClick={()=>{unsafe_p5Instance.erase();console.log("eraser"); type = "erase";}} width="auto"/></button>
-                {showErase && (
-                    <div
-                        ref={eraseRef}
-                        className="eraser-overlay"
-                    >
-                        <input
-                            type="range"
-                            min="1"
-                            max={MAX}
-                            id="sliderErase"
-                            onChange={(e) => setEraseValue(e.target.value)}
-                            onClick={changeErase()}
-                            value={eraseValue}
-                            />
+
+                    <Sketch setup={setup} draw={draw} className="no-scroll" mousePressed={mp}/>  
+
+                    <div className='bottom-tools'>
+                    
+                        <button className="toolButton" onClick={resetSketch}><img src={trash} width="auto" id="trash-button" alt="trashbtn"/></button>
+                            <button type="button" className="toolButton" onClick={() => setShow(true)}><img src={brush} width="auto" alt="brushes-img"/></button>
+                            {show && (
+                            <div
+                                ref={ref}
+                                className="brushes-overlay"
+                            >
+                                <span className="brushes">
+                                    <img className="brushImg" src={fountain} alt="brush-fountain" onClick={()=>{unsafe_p5Instance.noErase();console.log("fountain"); type = "fountain"; fountainPen();}}></img>
+                                    <img className="brushImg" src={markerBrush} alt="brush-marker" onClick={()=>{unsafe_p5Instance.noErase();console.log("marker"); type = "marker"; marker();}}></img>
+                                    <img className="brushImg" src={pencil} alt="brush-pen" onClick={()=>{unsafe_p5Instance.noErase();console.log("pen"); type = "pen"; pen();}}></img>
+                                    <img className="brushImg" src={spray} alt="brush-spray" onClick={()=>{unsafe_p5Instance.noErase();console.log("spray"); type = "spray"; sprayPaint();}} style= {{ width: '10%', paddingBottom: "6%"}}></img>
+                                </span>
+                                <input
+                                    type="range"
+                                    min="1"
+                                    max={MAX}
+                                    id="slider"
+                                    onChange={(e) => setValue(e.target.value)}
+                                    onClick={changeValue()}
+                                    value={value}
+                                    />
+                            </div>
+                            )}
+                
+                        <button className="toolButton" onClick={() => setEraseShow(true)}><img src={eraserImg} alt="erasertool" onClick={()=>{unsafe_p5Instance.erase();console.log("eraser"); type = "erase";}} width="auto"/></button>
+                        {showErase && (
+                            <div
+                                ref={eraseRef}
+                                className="eraser-overlay"
+                            >
+                                <input
+                                    type="range"
+                                    min="1"
+                                    max={MAX}
+                                    id="sliderErase"
+                                    onChange={(e) => setEraseValue(e.target.value)}
+                                    onClick={changeErase()}
+                                    value={eraseValue}
+                                    />
+                            </div>
+                            )}
+                            <button ref={colorRef} id="color-overlay" className="toolButton">
+                                <span className="colors">
+                                <input
+                                    type="color"
+                                    id="colorPicker"
+                                    onChange={(e) => setColorValue(e.target.value)}
+                                    onClick={changeColor()}
+                                    value={colorValue}
+                                />
+                                </span>
+                            </button>
                     </div>
-                    )}
-                    <button ref={colorRef} id="color-overlay" className="toolButton">
-                        <span className="colors">
-                        <input
-                            type="color"
-                            id="colorPicker"
-                            onChange={(e) => setColorValue(e.target.value)}
-                            onClick={changeColor()}
-                            value={colorValue}
-                        />
-                        </span>
-                    </button>
+                </div>
             </div>
         </div>
     );

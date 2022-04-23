@@ -11,7 +11,7 @@
 } */
 
 /* Portrait */
-@media screen and (orientation:portrait) {
+/* @media screen and (orientation:portrait) {
   .popup-inner {
     position: absolute;
     width: 84%;
@@ -30,63 +30,115 @@
     height: 6.5%;
     left: 2.25%;
     bottom: 10%;
-  }
-
-  
-}
+  } 
+} */
 /* Landscape */
-@media screen and (orientation:landscape) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    resize: horizontal;
-  }
+* {
+  font-family: "Gilroy-Regular";
+}
 
-  .popup {
-    position: fixed;
-    /* top: 30%; */
-    left: 0;
-    /* width: 100vw; */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index:1;
-  }
 
-  .popup-inner {
-    position: absolute;
-    width: 84%;
-    left: 9%;
-    /* bottom: 30%; */
-    padding: 5.5%;
-    background-color: white;
-    border-radius: 12px;
-    transform: translate(-7%, 50%);
-    transform: rotate(90deg);
-  }
-  
-  .close-btn img {
-    position: absolute;
-    border-radius: 12px;
-    width: 95%;
-    height: 8%;
-    left: -25%;
-    bottom: 46%;
-    transform: rotate(90deg);
-  }
+/* Orientation layout */
+#warning-message {
+  display: block;
 }
 
 @media only screen and (orientation: landscape) {
+  #wrapper {
+    display: none;
+  }
   #warning-message {
     display: block;
   }
+}
+@media only screen and (orientation: portrait) {
+  #warning-message {
+    display: none;
+  }
+}
+
+p#warnPara1 {
+  font-family: "Gilroy-Bold", sans-serif;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 0.03em;
+  line-height: 102%;
+  /* position: absolute; */
+  /* top: 30.5%;
+  left: 45%; */
+  padding: 12% 0 1% 0;
+}
+
+p#warnPara2 {
+  font-family: "Gilroy-Regular", sans-serif;
+  text-align: center;
+  font-size: 29px;
+  line-height: 112%;
+  /* padding: 10% 0 1% 0; */
+  /* position: absolute; */
+  /* top: 32.5%; */
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-warn {
+  /* transform: rotate(90deg); */
+  display: block;
+  position: fixed; 
+  
+  z-index: 1; /* Sit on top */
+  /* padding-top: 70%; */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-image: linear-gradient(#083d4f, #10839e, #083d4f);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid #1c778c;
+  border-radius: 12px;
+  width: 50%;
+  height: 40%;
+  font-size: 20px;
+  font-family: "Gilroy-Regular";
+}
+
+.modal-content-error {
+  background-color: white;
+  margin: 5% 2% 5% 8.5%;
+  padding: 1%;
+  border: 3px solid #1c778c;
+  border-radius: 12px;
+  width: 80%;
+  height: 70%;
+  /* font-size: 20px; */
+  font-family: "Gilroy-Regular";
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #f0f0f0; */
 }
 
 *,
@@ -116,6 +168,7 @@
 
 .top-tools {
   padding: 5% 0%;
+  padding-left: 9%;
   background-color: #083849;
 
   display: flex;
@@ -128,7 +181,7 @@
   /* padding: 5% 0%; */
 }
 
-#save-button,
+/* #save-button,
 #redo-button,
 #undo-button,
 #trash-button,
@@ -138,7 +191,7 @@
   -o-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-}
+} */
 
 img#saveGallery {
   padding-bottom: 2%;
@@ -186,10 +239,10 @@ img#saveGallery {
 .eraser-overlay {
   background: #2e5f70 !important;
   position: absolute;
-  right: 10%;
-  bottom: 17%;
-  width: 65%;
-  height: 30%;
+  right: 2%;
+  bottom: 66%;
+  width: 64%;
+  height: 33%;
   border-radius: 32.75px;
 }
 
@@ -205,11 +258,11 @@ img#saveGallery {
   }
 
 .brushImg {
-  -webkit-transform: rotate(90deg);
+  /* -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
+  transform: rotate(90deg); */
   padding: 5% !important;
 }
 
