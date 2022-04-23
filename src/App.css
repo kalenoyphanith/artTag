@@ -342,12 +342,12 @@ ul.slick-dots {
 
 .slick-prev {
   top: 71% !important;
-  width: 50px !important;
+  width: 36px !important;
 }
 
 .slick-next {
   top: 71% !important;
-  width: 70px !important;
+  width: 36px !important;
 }
 
 .slick-prev:before {
@@ -827,7 +827,8 @@ label {
 } */
 
 img#navButton {
-  width: 62%;
+  /* width: 62%; */
+  width:200px;
   height: auto;
 }
 
