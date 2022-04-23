@@ -751,6 +751,17 @@ label {
     left: 70%;
     transform: translate(-50%, -50%);
   } */
+  label[id="Student Alumni Union"]{
+    margin-top: -3.5%;
+  }
+
+  label[id="Frank E. Gannett Hall"]{
+    margin-top: -4%;
+  }
+
+  label[id="James E. Booth Hall"], label[id="Booth Hall Lobby"]{
+    margin-top: -4%;
+  }
 
   [id="George Eastman Building"] {
     left: 65%;
