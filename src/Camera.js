@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import QrReader from 'modern-react-qr-reader'
 import backButton from "./media/back.png";
+import refreshButton from "./media/refresh.png";
 import { Link } from "react-router-dom";
 import BottomNav from './components/BottomNav';
 
@@ -36,12 +37,23 @@ class Scan extends Component {
       marginRight: "auto",
     }
 
-    return(
+
+    function refreshPage() {
+      window.location.reload(false);
+    }
+
+    return(/* display: flex;
+    justify-content: space-around; */
       <div className="gallery-content">
-        <div className="header">
-          <h1 className="gallery-header"><Link to="/explore"><img src={backButton} alt="backBtn" id="backButton"/></Link>ArtTag</h1>
+        <div className="header" id="scan-header" style={{display: 'flex', justifyContent: 'space-around', marginTop: '10%'}}>
+        <Link to="/explore"><img src={backButton} alt="backBtn" id="backButton"/></Link>
+          <h1 id="back-header">ArtTag</h1>
+          <button onClick={refreshPage}><img src={refreshButton} alt="backBtn" id="refresh-button" style={{float:"right"}}/></button>
         </div>
+        
         <h1 id="headerQR">Hold in front of QR code to Scan!</h1>
+        <div>          
+          </div>
         <QrReader className="qr-image-wrapper"
           delay={this.state.delay}
           style={previewStyle}

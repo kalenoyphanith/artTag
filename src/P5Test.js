@@ -414,7 +414,7 @@ export default (props) => {
         <div id="paint-canvas">
             <div id="warning-message" className="modal-warn">
                 <div className="modal-content-error">
-                    <p id="warnPara1">Whoops!</p>
+                    <p id="warnPara1">Flip your phone!</p>
                     <p id="warnPara2">
                         Please change your orientation to<br />
                         portrait/vertical mode

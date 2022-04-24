@@ -424,333 +424,6 @@ label {
 
 /* Media Queries - Phone sizes */
 @media screen and (min-width: 280px) and (min-height: 653px) {
-  h1#gallery-header {
-    font-size: 32px;
-    line-height: 102%;
-    font-weight: 800;
-    padding-top: 10%;
-    color: #ffffff;
-    font-style: normal;
-  }
-
-  /* .location-name {
-    position: absolute;
-    top: 57%;
-    width: 100%;
-    left: 65%;
-    transform: translate(-50%, -50%);
-  }
-
-  label.location-name {
-    font-family: "GilroyBold";
-    font-size: 19px;
-    letter-spacing: 0.03em;
-    line-height: 102%;
-  } */
-
-  [id="Student Alumni Union"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  [id="Gene Polisseni Center"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  [id="George Eastman Building"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  [id="Frank E. Gannett Hall"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  [id="Booth Hall Lobby"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  [id="James E. Booth Hall"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }
-
-  /* .slick-prev {
-    left: 2% !important;
-    z-index: 1 !important;
-  }
-
-  .slick-next {
-    right: 2% !important;
-    z-index: 1 !important;
-  } */
-
-  .slick-prev:before,
-  .slick-next:before {
-    font-size: 20px;
-    line-height: 1;
-    color: white;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  .navigate-button {
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    height: 31.5%;
-    left: 25%;
-    top: 52%;
-  }
-
-  .add-button img {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 33%;
-  }
-
-  .bottombar-nav {
-    position: absolute;
-    width: 80%;
-    height: 8%;
-    left: 10%;
-    bottom: 4.5%;
-    background: rgba(196, 196, 196, 0.2);
-    border-radius: 42px;
-  }
-
-  #popup-tab {
-    width: 100%;
-  }
-
-  .popup-inner {
-    position: absolute;
-    width: 84%;
-    left: 9%;
-    bottom: 24%;
-    padding: 5.5%;
-    background-color: white;
-    border-radius: 12px;
-    transform: translate(-7%, 50%);
-  }
-
-  .close-btn img {
-    position: absolute;
-    border-radius: 12px;
-    width: 95%;
-    height: 6.5%;
-    left: 2.25%;
-    bottom: 4.5%;
-  }
-}
-
-@media screen and (min-height: 739px) {
-  /* .location-name {
-    position: absolute;
-    top: 57%;
-    width: 100%;
-    left: 72%;
-    transform: translate(-50%, -50%);
-  } */
-
-  [id="George Eastman Building"] {
-    left: 67%;
-  }
-
-  [id="Gene Polisseni Center"] {
-    left: 71%;
-  }
-
-  .add-button img {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 30%;
-  }
-
-  .bottombar-nav {
-    position: absolute;
-    width: 75%;
-    height: 7.5%;
-    left: 12.5%;
-    bottom: 5%;
-    background: rgba(196, 196, 196, 0.2);
-    border-radius: 42px;
-  }
-
-  #popup-tab {
-    width: 100%;
-  }
-
-  .popup-inner {
-    position: absolute;
-    width: 84%;
-    left: 9%;
-    bottom: 25.5%;
-    padding: 5.5%;
-    background-color: white;
-    border-radius: 12px;
-    transform: translate(-7%, 50%);
-  }
-
-  .close-btn img {
-    position: absolute;
-    border-radius: 12px;
-    width: 95%;
-    height: 7%;
-    left: 2.25%;
-    bottom: 4.5%;
-  }
-}
-
-@media screen and (min-width: 375px) and (min-height: 667px) {
-  h1#gallery-header {
-    font-size: 36px;
-    line-height: 102%;
-    font-weight: 800;
-    padding-top: 10%;
-    color: #ffffff;
-    font-style: normal;
-  }
-
-  /* .location-name {
-    position: absolute;
-    top: 56%;
-    width: 100%;
-    left: 65%;
-    transform: translate(-50%, -50%);
-  } */
-
-  /* label.location-name {
-    font-family: "GilroyBold";
-    font-size: 24px;
-    letter-spacing: 0.03em;
-    line-height: 102%;
-  } */
-
-  [id="George Eastman Building"] {
-    left: 60%;
-  }
-
-  [id="Gene Polisseni Center"] {
-    left: 65%;
-  }
-
-  .slick-prev {
-    left: 2% !important;
-    z-index: 1 !important;
-  }
-
-  .slick-next {
-    right: 2% !important;
-    z-index: 1 !important;
-  }
-
-  .navigate-button {
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    height: 35%;
-    left: 25%;
-    top: 50%;
-  }
-
-  /*   ul.slick-dots {
-    position: absolute;
-    top: 58%;
-    color: white;
-    bottom: 0%;
-    list-style: none;
-    text-align: center;
-  } */
-
-  img.carousel-img {
-    width: 67%;
-    height: 40%;
-  }
-
-  .carousel-img {
-    /* width: 80%; */
-    padding: 12% 7% 7% 15%;
-  }
-
-  .add-button img {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 25%;
-  }
-
-  .bottombar-nav {
-    position: absolute;
-    width: 75%;
-    height: 8.5%;
-    left: 12.5%;
-    bottom: 3%;
-    background: rgba(196, 196, 196, 0.2);
-    border-radius: 42px;
-  }
-
-  #popup-tab {
-    width: 95%;
-    padding-left: 0.5%;
-  }
-
-  .popup-inner {
-    position: absolute;
-    width: 82%;
-    left: 10%;
-    bottom: 28%;
-    padding: 5.5%;
-    background-color: white;
-    border-radius: 12px;
-    transform: translate(-7%, 50%);
-  }
-
-  .close-btn img {
-    position: absolute;
-    border-radius: 12px;
-    width: 93%;
-    height: 8%;
-    left: 3.5%;
-    bottom: 4.5%;
-  }
-}
-
-/* All other screens */
-@media screen and (min-width: 376px) and (min-height: 668px) {
-  /* .location-name {
-    position: absolute;
-    top: 71%;
-    top: 63%;
-    width: 100%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-  } */
   label[id="Student Alumni Union"]{
     margin-top: -3.5%;
   }
@@ -798,15 +471,124 @@ label {
     width: 63%;
   }
 
-  /* .slick-prev {
-    left: 5% !important;
-    z-index: 1 !important;
+  .navigate-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    height: 31.5%;
+    left: 25%;
+    top: 51.5%;
   }
 
-  .slick-next {
-    right: 5% !important;
-    z-index: 1 !important;
-  } */
+  img.carousel-img {
+    width: 64%;
+    height: 39%;
+  }
+
+  .carousel-img {
+    width: 80%;
+    padding: 5% 7% 5% 7%;
+  }
+
+  [id="Frank E. Gannett Hall-img"] {
+    top: 61%;
+    width: 67%;
+  }
+
+  .add-button img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+  }
+
+  .bottombar-nav {
+    position: absolute;
+    width: 75%;
+    height: 6%;
+    left: 12.5%;
+    /* bottom: 7%; */
+    bottom: 8%;
+    background: rgba(196, 196, 196, 0.2);
+    border-radius: 42px;
+  }
+
+  #popup-tab {
+    width: 94%;
+    /* padding-left: 6%; */
+  }
+
+  .popup-inner {
+    position: absolute;
+    width: 84%;
+    left: 9%;
+    bottom: 40%;
+    padding: 5.5%;
+    background-color: white;
+    border-radius: 12px;
+    transform: translate(-7%, 50%);
+  }
+
+  .close-btn img {
+    position: absolute;
+    border-radius: 12px;
+    width: 95%;
+    height: 6.5%;
+    left: 2.25%;
+    bottom: 20%;
+  }
+}
+
+@media screen and (min-height: 739px) {
+  label[id="Student Alumni Union"]{
+    margin-top: -3.5%;
+  }
+
+  label[id="Frank E. Gannett Hall"]{
+    margin-top: -4%;
+  }
+
+  label[id="James E. Booth Hall"], label[id="Booth Hall Lobby"]{
+    margin-top: -4%;
+  }
+
+  [id="George Eastman Building"] {
+    left: 65%;
+    width: 81%;
+  }
+
+  [id="Gene Polisseni Center"] {
+    left: 67%;
+    width: 70%;
+  }
+
+  [id="Booth Hall Lobby"] {
+    left: 75%;
+    width: 70%;
+  }
+
+  [id="Student Alumni Union"] {
+    top: 67%;
+    width: 70%;
+  }
+
+  [id="Frank E. Gannett Hall"] {
+    top: 61%;
+    width: 67%;
+  }
+
+  [id="Booth Hall Lobby"] {
+    top: 61%;
+    width: 54%;
+  }
+
+  [id="James E. Booth Hall"] {
+    top: 60%;
+    width: 63%;
+  }
 
   .navigate-button {
     background-color: transparent;
@@ -817,15 +599,244 @@ label {
     top: 51.5%;
   }
 
-  /* ul.slick-dots {
+  img.carousel-img {
+    width: 64%;
+    height: 39%;
+  }
+
+  .carousel-img {
+    width: 80%;
+    padding: 5% 7% 5% 7%;
+  }
+
+  [id="Frank E. Gannett Hall-img"] {
+    top: 61%;
+    width: 67%;
+  }
+
+  .add-button img {
     position: absolute;
-    top: 50%;
-    top: 65%;
-    color: white;
-    bottom: 0%;
-    list-style: none;
-    text-align: center;
-  }*/
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+  }
+
+  .bottombar-nav {
+    position: absolute;
+    width: 75%;
+    height: 6%;
+    left: 12.5%;
+    /* bottom: 7%; */
+    bottom: 8%;
+    background: rgba(196, 196, 196, 0.2);
+    border-radius: 42px;
+  }
+
+  #popup-tab {
+    width: 94%;
+    /* padding-left: 6%; */
+  }
+
+  .popup-inner {
+    position: absolute;
+    width: 84%;
+    left: 9%;
+    bottom: 40%;
+    padding: 5.5%;
+    background-color: white;
+    border-radius: 12px;
+    transform: translate(-7%, 50%);
+  }
+
+  .close-btn img {
+    position: absolute;
+    border-radius: 12px;
+    width: 95%;
+    height: 6.5%;
+    left: 2.25%;
+    bottom: 20%;
+  }
+}
+
+@media screen and (min-width: 375px) and (min-height: 667px) {
+  label[id="Student Alumni Union"]{
+    margin-top: -3.5%;
+  }
+
+  label[id="Frank E. Gannett Hall"]{
+    margin-top: -4%;
+  }
+
+  label[id="James E. Booth Hall"], label[id="Booth Hall Lobby"]{
+    margin-top: -4%;
+  }
+
+  [id="George Eastman Building"] {
+    left: 65%;
+    width: 81%;
+  }
+
+  [id="Gene Polisseni Center"] {
+    left: 67%;
+    width: 70%;
+  }
+
+  [id="Booth Hall Lobby"] {
+    left: 75%;
+    width: 70%;
+  }
+
+  [id="Student Alumni Union"] {
+    top: 67%;
+    width: 70%;
+  }
+
+  [id="Frank E. Gannett Hall"] {
+    top: 61%;
+    width: 67%;
+  }
+
+  [id="Booth Hall Lobby"] {
+    top: 61%;
+    width: 54%;
+  }
+
+  [id="James E. Booth Hall"] {
+    top: 60%;
+    width: 63%;
+  }
+
+  .navigate-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    height: 31.5%;
+    left: 25%;
+    top: 51.5%;
+  }
+
+  img.carousel-img {
+    width: 64%;
+    height: 39%;
+  }
+
+  .carousel-img {
+    width: 80%;
+    padding: 5% 7% 5% 7%;
+  }
+
+  [id="Frank E. Gannett Hall-img"] {
+    top: 61%;
+    width: 67%;
+  }
+
+  .add-button img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+  }
+
+  .bottombar-nav {
+    position: absolute;
+    width: 75%;
+    height: 6%;
+    left: 12.5%;
+    /* bottom: 7%; */
+    bottom: 8%;
+    background: rgba(196, 196, 196, 0.2);
+    border-radius: 42px;
+  }
+
+  #popup-tab {
+    width: 94%;
+    /* padding-left: 6%; */
+  }
+
+  /* .popup-inner {
+    position: absolute;
+    width: 84%;
+    left: 9%;
+    bottom: 40%;
+    padding: 5.5%;
+    background-color: white;
+    border-radius: 12px;
+    transform: translate(-7%, 50%);
+  } */
+
+  .close-btn img {
+    position: absolute;
+    border-radius: 12px;
+    width: 95%;
+    height: 6.5%;
+    left: 2.25%;
+    bottom: 20%;
+  }
+}
+
+/* All other screens */
+@media screen and (min-width: 376px) and (min-height: 668px) {
+  label[id="Student Alumni Union"]{
+    margin-top: -3.5%;
+  }
+
+  label[id="Frank E. Gannett Hall"]{
+    margin-top: -4%;
+  }
+
+  label[id="James E. Booth Hall"], label[id="Booth Hall Lobby"]{
+    margin-top: -4%;
+  }
+
+  [id="George Eastman Building"] {
+    left: 65%;
+    width: 81%;
+  }
+
+  [id="Gene Polisseni Center"] {
+    left: 67%;
+    width: 70%;
+  }
+
+  [id="Booth Hall Lobby"] {
+    left: 75%;
+    width: 70%;
+  }
+
+  [id="Student Alumni Union"] {
+    top: 67%;
+    width: 70%;
+  }
+
+  [id="Frank E. Gannett Hall"] {
+    top: 61%;
+    width: 67%;
+  }
+
+  [id="Booth Hall Lobby"] {
+    top: 61%;
+    width: 54%;
+  }
+
+  [id="James E. Booth Hall"] {
+    top: 60%;
+    width: 63%;
+  }
+
+  .navigate-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    height: 31.5%;
+    left: 25%;
+    top: 51.5%;
+  }
 
   img.carousel-img {
     width: 64%;
@@ -893,7 +904,7 @@ label {
   img.carousel-img {
     width: 48%;
     height: 35%;
-    margin-left: 5%
+    margin-left: 6%
   }
 
   #popup-tab {
@@ -1292,4 +1303,8 @@ a#a-redirect {
   100% {
     opacity: 1;
   }
+}
+
+#refresh-button {
+  float: right;
 }

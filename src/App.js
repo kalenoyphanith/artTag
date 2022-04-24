@@ -23,7 +23,7 @@ function App() {
               <Landing/>
               </Route>
               <Route path="/explore">
-              <Explore/>
+              <Test/>
               </Route>
               <Route path="/gallery">
                 <Gallery/>
